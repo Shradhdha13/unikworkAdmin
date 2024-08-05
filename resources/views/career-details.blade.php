@@ -109,14 +109,16 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Expected Monthly Salary</label>
+                                            <label>Expected Monthly Salary <span>*</span></label>
                                             <input type="number" class="form-control" id="expected_salary" name="expected_salary">
-                                            <label class="error"></label>
+                                            <label class="error">
+                                                {{$errors->first('expected_salary')}}
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Experience</label>
+                                            <label>Experience <span>*</span></label>
                                             <select name="experience" id="experience" class="form-control">
                                                 <option value="">-- Select --</option>
                                                 <option value="Fresher">Fresher</option>
@@ -132,7 +134,9 @@
                                                 <option value="9 Year and above">9 Year and above</option>
                                                 <option value="10 Year and above">10 Year and above</option>
                                             </select>
-                                            <label class="error"></label>
+                                            <label class="error">
+                                                {{$errors->first('experience')}}
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
@@ -146,9 +150,11 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             {{-- <div class="form-group pl-3 pr-3 p-sm-0"> --}}
-                                            <label>Current Location</label>
+                                            <label>Current Location <span>*</span></label>
                                             <input type="text" class="form-control" data-error="location-error" id="location" name="location">
-                                            <label class="error location-error"></label>
+                                            <label class="error">
+                                                {{$errors->first('location')}}
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

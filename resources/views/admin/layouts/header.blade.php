@@ -23,6 +23,7 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
         </button>
+        
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-settings d-none d-lg-flex dropdown">
             <form id="logout-form" action="{{ url('admin/logout') }}" method="POST" class="mb-0">

@@ -7,12 +7,58 @@
         <div class="content-wrapper">
           <div class="row">
             <div class="col-md-12 grid-margin">
+              <div class="card text-white bg-flat-color-1">
+                <div class="card-body pb-0">
               <div class="row">
                 <div class="col-12">
                   {{-- <h3 class="font-weight-bold">Welcome {{ Auth::user()->name }}</h3> --}}
-                  <h3 class="font-weight-bold">Welcome Admin</h3>
+                  {{-- <h3 class="font-weight-bold">Welcome Admin</h3> --}}
                     <div class="row align-items-center dashboard">
-                      <div class="col col-sm-6 admin-calender">
+                      <div class="row col-md-12 col-sm-6 counter">
+                        {{-- <div class="row"> --}}
+                          <div class="col-md-3 mb-4 stretch-card transparent">
+                            <div class="card card-tale">
+                              <div class="card-body">
+                                <p class="mb-4">Total Contact Data</p>
+                                <p class="fs-38 mb-2">{{ $contactCount }}</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-4 stretch-card transparent">
+                            <div class="card card-dark-blue">
+                              <div class="card-body">
+                                <p class="mb-4">Total Careers Data</p>
+                                <p class="fs-38 mb-2">{{ $careerCount }}</p>
+                              </div>
+                            </div>
+                          </div>
+                        {{-- </div> --}}
+                        {{-- <div class="row"> --}}
+                          <div class="col-md-3 mb-4 stretch-card transparent">
+                            <div class="card card-light-blue">
+                              <div class="card-body">
+                                <p class="mb-4">Monthly Contact Data</p>
+                                <div class="d-flex">
+                                  <p class="fs-38 mr-4">{{ $contactMonthlyCount }}</p>
+                                  <p>{{ $contactPr }}% (30 days)</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-4 stretch-card transparent">
+                            <div class="card card-light-danger">
+                              <div class="card-body">
+                                <p class="mb-4">Monthly Careers Data</p>
+                                <div class="d-flex">
+                                  <p class="fs-38 mr-4">{{ $careerMonthlyCount }}</p>
+                                  <p>{{ $careerPr }}% (30 days)</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        {{-- </div> --}}
+                      </div>
+                      {{-- <div class="col col-sm-6 admin-calender">
                         <section class="ftco-section">
                             <div class="elegant-calencar d-md-flex">
                               <div class="wrap-header d-flex align-items-center img calendar-bg">
@@ -102,51 +148,8 @@
                               </div>
                             </div>
                         </section>
-                      </div>
-                      <div class="col col-sm-6 counter">
-                        <div class="row">
-                          <div class="col-md-6 mb-4 stretch-card transparent">
-                            <div class="card card-tale">
-                              <div class="card-body">
-                                <p class="mb-4">Total Contact Data</p>
-                                <p class="fs-38 mb-2">{{ $contactCount }}</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 mb-4 stretch-card transparent">
-                            <div class="card card-dark-blue">
-                              <div class="card-body">
-                                <p class="mb-4">Total Careers Data</p>
-                                <p class="fs-38 mb-2">{{ $careerCount }}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                            <div class="card card-light-blue">
-                              <div class="card-body">
-                                <p class="mb-4">Monthly Contact Data</p>
-                                <div class="d-flex">
-                                  <p class="fs-38 mr-4">{{ $contactMonthlyCount }}</p>
-                                  <p>{{ $contactPr }}% (30 days)</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 stretch-card transparent">
-                            <div class="card card-light-danger">
-                              <div class="card-body">
-                                <p class="mb-4">Monthly Careers Data</p>
-                                <div class="d-flex">
-                                  <p class="fs-38 mr-4">{{ $careerMonthlyCount }}</p>
-                                  <p>{{ $careerPr }}% (30 days)</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      </div> --}}
+                      
                       <div class="col col-md-6 chart">
                         <div class="card">
                           <div class="card-body">
@@ -181,6 +184,8 @@
                         </div>
                       </div>
                     </div>
+                </div>
+              </div>
                 </div>
               </div>
             </div>

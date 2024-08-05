@@ -202,7 +202,11 @@ class UnikworkController extends Controller
                 'email' => 'required',
                 'phone' => 'required',
                 'cv' => 'required',
-                'requirement_id' => 'required'
+                'requirement_id' => 'required',
+                'expected_salary' => 'required',
+                'experience' => 'required',
+                'location' => 'required'
+
             ];
 
             $validator = Validator::make($request->all(), $rule);
