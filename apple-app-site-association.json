@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["MWNZ8MDLCL.com.teetimegolfpass.app"],
+        "paths": ["*"]
+      }
+    ]
+  }
+}

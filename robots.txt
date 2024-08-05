@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /.git/
+Disallow: /app/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /node_modules/
+Disallow: /tests/
+Disallow: /storage/
+Disallow: /vendor/
+
