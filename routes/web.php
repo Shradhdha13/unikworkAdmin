@@ -29,6 +29,7 @@ Route::get('/case-studies', [UnikworkController::class, 'casestudy'])->name('cas
 Route::get('/contact-us', [UnikworkController::class, 'contact'])->name('contact-us');
 Route::post('/contact-us', [UnikworkController::class, 'addcontact'])->name('add-contact');
 Route::get('/careers', [UnikworkController::class, 'careers'])->name('careers');
+Route::get('/admin/categoryfilter', [UnikworkController::class, 'categoryfilter'])->name('categoryfilter');
 Route::get('/career-details/{id}', [UnikworkController::class, 'careerDetails']);
 Route::post('/add-careers', [UnikworkController::class, 'addcareer'])->name('add-careers');
 Route::get('/sitemap', [UnikworkController::class, 'sitemap'])->name('sitemap');
@@ -49,7 +50,9 @@ Route::get('/app-ads.txt', [UnikworkController::class, 'appAds'])->name('app-ads
 // Admin Route
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes([
-        'register' => false, 'reset' => false, 'verify' => false
+        'register' => false,
+        'reset' => false,
+        'verify' => false
     ]);
 
     Route::get('/', [AdminController::class, 'login']);
@@ -64,6 +67,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/edit-career/{id}', [AdminController::class, 'editCareer']);
         Route::post('/edit-career-data', [AdminController::class, 'editCareerData'])->name('edit-career-data');
         Route::get('/career-view', [AdminController::class, 'CareerView'])->name('career-view');
+        Route::get('expfilter', [AdminController::class, 'expfilter'])->name('expfilter');
         Route::get('/career-delete/{id}', [AdminController::class, 'careerDelete']);
         // contact
         Route::get('/contact-view', [AdminController::class, 'ContactView'])->name('contact-view');

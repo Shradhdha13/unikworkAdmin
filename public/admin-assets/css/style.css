@@ -9244,7 +9244,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-Poppins: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", Poppins, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -9255,7 +9255,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: Poppins;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -9276,7 +9276,7 @@ section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", Poppins, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -10996,7 +10996,7 @@ pre code {
 .jsgrid .jsgrid-table th,
 .table td,
 .jsgrid .jsgrid-table td {
-  padding: 1rem;
+  padding: 0.5rem;
   vertical-align: top;
   border-top: 1px solid #CED4DA;
 }
@@ -11017,14 +11017,14 @@ pre code {
   padding: 0.3rem;
 }
 
-.table-bordered {
+/* .table-bordered {
   border: 1px solid #CED4DA;
-}
+} */
 
-.table-bordered th,
+/* .table-bordered th,
 .table-bordered td {
   border: 1px solid #CED4DA;
-}
+} */
 
 .table-bordered thead th,
 .table-bordered thead td {
@@ -11038,9 +11038,9 @@ pre code {
   border: 0;
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
+/* .table-striped tbody tr:nth-of-type(odd) {
   background-color: #fff8f5;
-}
+} */
 
 .table-hover tbody tr:hover {
   color: #212529;
@@ -11353,7 +11353,8 @@ pre code {
   display: block;
   width: 100%;
   height: 2.875rem;
-  padding: 0.875rem 1.375rem;
+  padding: 5px;
+  /* padding: 0.875rem 1.375rem; */
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1;
@@ -12236,9 +12237,9 @@ button#cancle-btn {
 
 .btn-primary:hover,
 .wizard>.actions a:hover {
-  background-color: transparent;
+  /* background-color: transparent; */
   border-color: #FF7F50;
-  color: #343434;
+  color: #ffff;
 }
 
 .btn-primary:focus,
@@ -13192,7 +13193,8 @@ input[type="button"].btn-block {
 .dropdown-item {
   display: block;
   width: 100%;
-  padding: 0.25rem 1.5rem;
+  padding: 1rem 1.5rem;
+  /* padding: 0.25rem 1.5rem; */
   clear: both;
   font-weight: 400;
   color: #343434;
@@ -15708,12 +15710,13 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid #e3e3e3;
-  border-radius: 5px;
-  box-shadow: 0px 19px 27px -20px rgb(0 0 0 / 16%) !important;
+  border-radius: 12px;
+  /* box-shadow: 0px 19px 27px -20px rgb(0 0 0 / 16%) !important; */
 }
 
 .counter .card {
-  border-radius: 20px;
+  border-radius: 8px;
+  /* border-radius: 20px; */
 }
 
 .card>hr {
@@ -17245,7 +17248,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", Poppins, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -17370,7 +17373,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", Poppins, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -19503,7 +19506,7 @@ button.bg-dark:focus,
 
 .mb-4,
 .my-4 {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .ml-4,
@@ -22325,7 +22328,7 @@ input:focus {
 /* Typography */
 body {
   font-size: 1rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito", Poppins;
   font-weight: initial;
   line-height: normal;
   -webkit-font-smoothing: antialiased;
@@ -22599,7 +22602,7 @@ pre {
 code {
   padding: 5px;
   color: #FF4747;
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito", Poppins;
   font-weight: 300;
   font-size: 0.875rem;
   border-radius: 4px;
@@ -22614,7 +22617,7 @@ code {
   -webkit-transition: all 0.25s ease;
   -ms-transition: all 0.25s ease;
   font-size: calc(0.875rem - 0.05rem);
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito", Poppins;
   font-weight: 400;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -22688,6 +22691,7 @@ code {
   align-items: stretch;
   -webkit-justify-content: stretch;
   justify-content: stretch;
+  height: 124px;
 }
 
 .stretch-card>.card {
@@ -23142,7 +23146,7 @@ code {
 }
 
 .fs-38 {
-  font-size: 38px;
+  font-size: 28px;
 }
 
 .chartjs-legend ul {
@@ -23800,10 +23804,11 @@ code {
 .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-confirm,
 .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel,
 .wizard>.actions a {
-  font-size: 0.875rem;
+  font-size: 16px;
   line-height: 1;
-  font-weight: 400;
-  border-radius: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  /* border-radius: 15px; */
   /* Buttons with only icons */
   /* Buttons with icon and text */
 }
@@ -25208,8 +25213,12 @@ code {
 }
 
 .card .card-body {
-  padding: 1.25rem 1.25rem;
+  padding: 1.5rem;
 }
+
+/* .card .card-body {
+  padding: 1.25rem 1.25rem;
+} */
 
 .card .card-body+.card-body {
   padding-top: 1rem;
@@ -26147,6 +26156,7 @@ select.border-dark.tt-hint:focus {
   line-height: 1.4rem;
   vertical-align: top;
   margin-bottom: .5rem;
+  color: #000;
 }
 
 .form-group.has-danger .form-control,
@@ -27181,7 +27191,7 @@ dl li {
   padding-left: 0;
   position: relative;
   margin-bottom: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito", Poppins;
 }
 
 .icon-data-list li {
@@ -27282,7 +27292,7 @@ dl li {
 .pagination .page-item.active .jsgrid .jsgrid-pager .jsgrid-pager-page a,
 .jsgrid .jsgrid-pager .page-item.active .jsgrid-pager-page a,
 .jsgrid .jsgrid-pager .jsgrid-pager-page .page-item.active a,
-.jsgrid .jsgrid-pager .active.jsgrid-pager-page a,
+/* .jsgrid .jsgrid-pager .active.jsgrid-pager-page a,
 .pagination .page-item:hover .page-link,
 .jsgrid .jsgrid-pager .page-item:hover .page-link,
 .jsgrid .jsgrid-pager .jsgrid-pager-nav-button:hover .page-link,
@@ -27294,7 +27304,7 @@ dl li {
 .pagination .page-item:hover .jsgrid .jsgrid-pager .jsgrid-pager-page a,
 .jsgrid .jsgrid-pager .page-item:hover .jsgrid-pager-page a,
 .jsgrid .jsgrid-pager .jsgrid-pager-page .page-item:hover a,
-.jsgrid .jsgrid-pager .jsgrid-pager-page:hover a,
+.jsgrid .jsgrid-pager .jsgrid-pager-page:hover a, */
 .pagination .page-item:focus .page-link,
 .jsgrid .jsgrid-pager .page-item:focus .page-link,
 .jsgrid .jsgrid-pager .jsgrid-pager-nav-button:focus .page-link,
@@ -27319,9 +27329,9 @@ dl li {
 .jsgrid .jsgrid-pager .page-item:active .jsgrid-pager-page a,
 .jsgrid .jsgrid-pager .jsgrid-pager-page .page-item:active a,
 .jsgrid .jsgrid-pager .jsgrid-pager-page:active a {
-  background: #FF7F50;
-  border-color: #FF7F50;
-  color: #ffffff;
+  background: rgb(244, 244, 244);
+  border-color: #CED4DA;
+  color: #000;
 }
 
 .pagination.pagination-flat .page-item,
@@ -28445,7 +28455,7 @@ dl li {
 }
 
 .preview-list .preview-item .preview-item-content p .content-category {
-  font-family: 'source-sans-pro-semibold', sans-serif;
+  font-family: 'source-sans-pro-semibold', Poppins;
   padding-right: 15px;
   border-right: 1px solid #CED4DA;
 }
@@ -28499,24 +28509,25 @@ dl li {
 }
 
 /* Tables */
-.table,
+/* .table,
 .jsgrid .jsgrid-table {
   margin-bottom: 0;
-}
+} */
 
 .table thead th,
 .jsgrid .jsgrid-table thead th {
   border-top: 0;
   border-bottom-width: 1px;
-  font-weight: 600;
-  font-size: .875rem;
-  background: #ffac8a;
+  font-weight: 500;
+  font-size: 1rem;
+  /* font-size: .875rem; */
+  /* background: #ffac8a; */
   color: #343434;
 }
 
-.table tr:nth-child(even) {
+/* .table tr:nth-child(even) {
   background-color: #f1f1f1;
-}
+} */
 
 .career-table tbody td:nth-child(02) {
   width: 170px;
@@ -28543,7 +28554,7 @@ dl li {
 
 .table td,
 .jsgrid .jsgrid-table td {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .table td img,
@@ -28554,7 +28565,7 @@ dl li {
 }
 
 .table td span {
-  font-size: 20px;
+  font-size: 16px;
   color: #343434;
 }
 
@@ -28577,10 +28588,10 @@ dl li {
   border: none;
 }
 
-.table.table-bordered,
+/* .table.table-bordered,
 .jsgrid .table-bordered.jsgrid-table {
   border-top: 1px solid #CED4DA;
-}
+} */
 
 .nav-tabs .nav-link {
   background: #f6f8fa;
@@ -30170,7 +30181,8 @@ body.avgrund-active {
 .swal2-modal .swal2-buttonswrapper .dataTables_wrapper .dataTable .swal2-styled,
 .dataTables_wrapper .dataTable .wizard>.actions a,
 .wizard>.actions .dataTables_wrapper .dataTable a {
-  padding: 0.1rem 1rem;
+  padding: 10px 18px;
+  border-radius: 6px;
   vertical-align: top;
 }
 
@@ -30191,7 +30203,7 @@ body.avgrund-active {
   border-bottom-width: 0;
 }
 
-.dataTables_wrapper .dataTable thead .sorting:before,
+/* .dataTables_wrapper .dataTable thead .sorting:before,
 .dataTables_wrapper .dataTable thead .sorting:after,
 .dataTables_wrapper .dataTable thead .sorting_asc:before,
 .dataTables_wrapper .dataTable thead .sorting_asc:after,
@@ -30204,9 +30216,9 @@ body.avgrund-active {
   line-height: 2.5;
   font-family: themify;
   font-size: .65rem;
-}
+} */
 
-.dataTables_wrapper .dataTable thead .sorting:before,
+/* .dataTables_wrapper .dataTable thead .sorting:before,
 .dataTables_wrapper .dataTable thead .sorting_asc:before,
 .dataTables_wrapper .dataTable thead .sorting_desc:before,
 .dataTables_wrapper .dataTable thead .sorting_asc_disabled:before,
@@ -30214,9 +30226,9 @@ body.avgrund-active {
   content: "\e64b";
   right: 1.2em;
   bottom: 0;
-}
+} */
 
-.dataTables_wrapper .dataTable thead .sorting:after,
+/* .dataTables_wrapper .dataTable thead .sorting:after,
 .dataTables_wrapper .dataTable thead .sorting_asc:after,
 .dataTables_wrapper .dataTable thead .sorting_desc:after,
 .dataTables_wrapper .dataTable thead .sorting_asc_disabled:after,
@@ -30224,6 +30236,14 @@ body.avgrund-active {
   content: "\e648";
   right: 1.2em;
   top: 0;
+} */
+
+table.dataTable>thead .sorting_asc:before,
+table.dataTable>thead .sorting:after,
+table.dataTable>thead .sorting_asc:after,
+table.dataTable>thead .sorting::before {
+  right: 1em;
+  content: "" !important;
 }
 
 .dataTables_wrapper .dataTables_paginate {
@@ -30413,7 +30433,7 @@ table.dataTable tbody td.select-checkbox:after {
 
 .datepicker.datepicker-dropdown .datepicker-days table.table-condensed thead tr th.dow,
 .datepicker.datepicker-inline .datepicker-days table.table-condensed thead tr th.dow {
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito", Poppins;
   color: #343434;
   font-size: 0.875rem;
   font-weight: initial;
@@ -32624,7 +32644,7 @@ div.tagsinput span.tag a {
 }
 
 .content-wrapper {
-  background: #f9f9f9;
+  background: #efefef;
   padding: 2.375rem 2.375rem;
   width: 100%;
   -webkit-flex-grow: 1;
@@ -32641,7 +32661,8 @@ div.tagsinput span.tag a {
 .sidebar {
   min-height: calc(100vh - 60px);
   background: #fff;
-  font-family: "Nunito", sans-serif;
+  color: #292929;
+  font-family: "Poppins";
   font-weight: 500;
   padding: 0;
   width: 245px;
@@ -32682,8 +32703,8 @@ div.tagsinput span.tag a {
   align-items: center;
   white-space: nowrap;
   padding: 0.8125rem 1.937rem 0.8125rem 1rem;
-  color: #6C7383;
-  border-radius: 8px;
+  color: #6f767e;
+  border-radius: 12px;
   -webkit-transition-duration: 0.45s;
   -moz-transition-duration: 0.45s;
   -o-transition-duration: 0.45s;
@@ -32741,9 +32762,11 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item .nav-link .menu-title {
-  color: inherit;
+  color: #6f767e;
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-weight: 500;
+  /* font-size: 0.875rem; */
   line-height: 1;
   vertical-align: middle;
 }
@@ -32770,14 +32793,19 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item.active>.nav-link {
-  background: #FF7F50;
+  background: #efefef;
+  /* background: #FF7F50; */
   position: relative;
 }
 
 .sidebar .nav .nav-item.active>.nav-link i,
 .sidebar .nav .nav-item.active>.nav-link .menu-title,
 .sidebar .nav .nav-item.active>.nav-link .menu-arrow {
-  color: #fff;
+  color: #292929;
+  font-size: 16px;
+  font-weight: 600;
+
+  /* color: #fff; */
 }
 
 .sidebar .nav .nav-item.active>.nav-link i.menu-arrow::before {
@@ -32787,11 +32815,12 @@ div.tagsinput span.tag a {
 .sidebar .nav .nav-item:hover>.nav-link i,
 .sidebar .nav .nav-item:hover>.nav-link .menu-title,
 .sidebar .nav .nav-item:hover>.nav-link .menu-arrow {
-  color: #fff;
+  color: #292929;
 }
 
 .sidebar .nav:not(.sub-menu) {
-  margin-top: 1.45rem;
+  margin-top: 4.45rem;
+  /* margin-top: 1.45rem; */
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -32802,8 +32831,8 @@ div.tagsinput span.tag a {
 
 .sidebar .nav:not(.sub-menu)>.nav-item:hover>.nav-link,
 .sidebar .nav:not(.sub-menu)>.nav-item:hover[aria-expanded="true"] {
-  background: #FF7F50;
-  color: #fff;
+  /* background: #efefef; */
+  color: #292929;
 }
 
 .sidebar .nav:not(.sub-menu)>.nav-item>.nav-link {
@@ -32812,8 +32841,8 @@ div.tagsinput span.tag a {
 
 .sidebar .nav:not(.sub-menu)>.nav-item>.nav-link[aria-expanded="true"] {
   border-radius: 8px 8px 0 0;
-  background: #FF7F50;
-  color: #fff;
+  background: #efefef;
+  color: #292929;
 }
 
 .sidebar .nav:not(.sub-menu)>.nav-item>.nav-link[aria-expanded="true"] i.menu-icon,
@@ -32822,7 +32851,8 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu)>.nav-item.active {
-  background: #FF7F50;
+  background: #efefef;
+  /* background: #FF7F50; */
 }
 
 .sidebar .nav.sub-menu {
@@ -32907,10 +32937,10 @@ div.tagsinput span.tag a {
   color: #ffffff;
 }
 
-.sidebar-dark .sidebar .nav:not(.sub-menu)>.nav-item:hover>.nav-link {
-  background: #FF7F50;
+/* .sidebar-dark .sidebar .nav:not(.sub-menu)>.nav-item:hover>.nav-link {
+  background: #efefef;
   color: #fff;
-}
+} */
 
 .sidebar-dark .sidebar .nav:not(.sub-menu)>.nav-item .nav-link[aria-expanded="true"] {
   background: #1a1f26;
@@ -32933,13 +32963,13 @@ div.tagsinput span.tag a {
   background: transparent;
 }
 
-.sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link:hover {
+/* .sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link:hover {
   color: #9a94a7;
 }
 
 .sidebar-dark .sidebar .nav.sub-menu .nav-item:hover {
   background: transparent;
-}
+} */
 
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {
@@ -32969,7 +32999,8 @@ div.tagsinput span.tag a {
   -ms-transition: background 0.25s ease;
   -webkit-box-shadow: 0px 5px 21px -5px #CDD1E1;
   -moz-box-shadow: 0px 5px 21px -5px #CDD1E1;
-  box-shadow: 0px 5px 21px -5px #CDD1E1;
+  box-shadow: none;
+  /* box-shadow: 0px 5px 21px -5px #CDD1E1; */
   /* Navbar color variations */
 }
 
@@ -33035,7 +33066,8 @@ div.tagsinput span.tag a {
   padding-right: 2.375rem;
   padding-left: 2.375rem;
   width: calc(100% - 235px);
-  height: 60px;
+  /* height: 60px; */
+  height: 95px;
 }
 
 @media (max-width: 991px) {
@@ -35534,7 +35566,7 @@ div.tagsinput span.tag a {
   }
 
   .sidebar-dark.sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link .menu-title {
-    color: #ffffff;
+    color: #292929;
   }
 
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link .menu-title:after {
@@ -35817,7 +35849,7 @@ div.tagsinput span.tag a {
 .settings-panel .settings-heading {
   padding: 16px 0 13px 35px;
   font-size: 0.875rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito", Poppins;
   font-weight: 500;
   line-height: 1;
   color: rgba(0, 0, 0, 0.9);
@@ -36012,7 +36044,7 @@ div.tagsinput span.tag a {
 }
 
 .settings-panel .events p {
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito", Poppins;
   font-weight: 400;
 }
 
@@ -36402,13 +36434,14 @@ a:focus {
 }
 
 /* calender css end*/
-.counter .card .card-body {
-  padding: 2rem;
-}
+/* .counter .card .card-body {
+  padding: 1.5rem;
+} */
 
 .counter .mb-4 {
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0.4px;
+  font-weight: 500;
 }
 
 .footer p:last-child {
@@ -36688,4 +36721,207 @@ div.switcher label input.active+span {
   .sidebar-offcanvas {
     top: 40px;
   }
+}
+
+.card-tale {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #fff;
+  /* or any background color */
+  border-radius: 8px;
+  /* Optional: Add border radius to the card */
+}
+
+.card-body {
+  flex: 1;
+}
+
+.ico-radious {
+  border: 3px solid #fb915580;
+  border-radius: 50%;
+  height: 53px;
+  width: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  /* Adjust this value to fit your needs */
+}
+
+.ico-radious img {
+  width: 20px;
+  height: 20px;
+}
+
+.txt-dark {
+  color: #000;
+  font-weight: 600;
+}
+
+.full-card {
+  position: relative;
+  height: 80vh;
+  margin: 55px 0px 0px 0px;
+}
+
+.full-cards {
+  position: relative;
+  margin: 55px 0px 0px 0px;
+}
+
+.side_ico {
+  padding-left: 10px;
+}
+
+.nav-icon,
+.nav-icon-career,
+.nav-icon-resume,
+.nav-icon-blog,
+.nav-icon-contact,
+.nav-icon-user {
+  width: 20px;
+  /* Adjust size as needed */
+  height: 20px;
+  /* Adjust size as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+.nav-item .nav-icon {
+  background-image: url('http://localhost/unikworkAdmin/public/images/light.svg');
+  /* Path to your light icon */
+}
+
+/* Image for active state */
+.nav-item.active .nav-icon {
+  background-image: url('http://localhost/unikworkAdmin/public/images/home_ico.svg');
+  /* Path to your home icon */
+}
+
+/*Career*/
+.nav-item .nav-icon-career {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/light_career.svg');
+}
+
+.nav-item.active .nav-icon-career {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/dark_career.svg');
+}
+
+/*resume*/
+.nav-item .nav-icon-resume {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/light_resume.svg');
+}
+
+.nav-item.active .nav-icon-resume {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/dark_resume.svg');
+}
+
+/*blog*/
+.nav-item .nav-icon-blog {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/light_blog_ico.svg');
+}
+
+.nav-item.active .nav-icon-blog {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/dark_blog_ico.svg');
+}
+
+/*contact*/
+.nav-item .nav-icon-contact {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/light_contact_ico.svg');
+}
+
+.nav-item.active .nav-icon-contact {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/dark_contact_ico.svg');
+}
+
+/*users*/
+.nav-item .nav-icon-user {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/light_user_ico.svg');
+}
+
+.nav-item.active .nav-icon-user {
+  background-image: url('http://localhost/unikworkAdmin/public/images/sidebar/dark_user.svg');
+}
+
+/*Logout Design*/
+.dropdown-options {
+  display: none;
+  position: absolute;
+  margin: 75px -95px;
+  overflow: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+.h-divider {
+  margin: auto;
+  margin-top: 39px;
+  margin-bottom: -35px;
+  width: 80%;
+  position: relative;
+  border: 1px solid #00000014;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  /* Aligns items to the right */
+}
+
+.select2-container .select2-selection--single {
+  height: auto !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  margin-top: 5px !important;
+}
+
+.select2-container--default .select2-selection--single {
+  border-radius: 8px !important;
+}
+
+.filter-label {
+  margin-right: 10px;
+}
+
+.filter-select {
+  width: 100%;
+}
+
+.inner-col {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-selection__rendered {
+  position: relative;
+  display: inline-block !important;
+  padding-right: 20px !important;
+  /* Add some padding to accommodate the icon */
+}
+
+.select2-selection__rendered::after {
+  content: '|' !important;
+  /* The pipe icon */
+  position: absolute !important;
+  right: 10px !important;
+  /* Position the icon on the right side */
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 18px !important;
+  /* Adjust font size as needed */
+  color: #000 !important;
+  /* Adjust color as needed */
 }

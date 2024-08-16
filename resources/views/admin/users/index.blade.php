@@ -5,9 +5,14 @@
 @section('content')
     <div class="main-panel">
         <div class="content-wrapper">
+            <div class="card text-white bg-flat-color-1 full-card">
+                <div class="card-body pb-0">
             <div class="row add-user mb-4">
                 <div class="col-6 text-left">
-                    <h3 class="mb-0">Users Data</h3>
+                    {{-- <h4 class="card-title ml-0 mb-4">Users Data</h4> --}}
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        + Add User
+                    </button>
                 </div>
                 
                 <div class="col-6">
@@ -20,21 +25,21 @@
                             <option value="3">Project Manager</option>
                             <option value="4">Users</option>
                         </select>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Add User
-                        </button>
+                        </button> --}}
                     </div>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header p-0">
-                                    <h3 class="modal-title m-0" id="exampleModalLabel">Add User</h3>
+                                    <h4 class="modal-title m-0 text-dark" id="exampleModalLabel">Add User</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body form-container">
                                     <form class="forms-sample add-user" id="addUser" method="post" action="{{ route('add-user') }}">
                                         @csrf
 
@@ -65,7 +70,9 @@
                                             </select>
                                         </div>
 
-                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                        <div class="button-container">
+                                            <button class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -82,6 +89,7 @@
                 </div>
             </div>
         </div>
+            </div></div>
     </div>
     </div>
 

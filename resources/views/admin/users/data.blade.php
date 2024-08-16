@@ -27,8 +27,15 @@
                     @endswitch
                 </td>
                 <td class="table-action">
-                    <button type="button" class="edit-btn btn btn-primary editusers btn-icon" data-toggle="modal" data-target="#exampleModal" data-id="{{ encrypt($users->id) }}"><img src="{{ asset('/images/edit.png') }}" alt="icon"></button>
-                    <a data-id="{{ encrypt($users->id) }}" type="button" class="delete-btn btn-icon" id="deleteUser"><img src="{{ asset('/images/delete.png') }}" alt="icon"></a>
+                    {{-- <button type="button" class="edit-btn btn btn-primary editusers" data-toggle="modal" data-target="#exampleModal" data-id="{{ encrypt($users->id) }}">
+                         <img src="{{ asset('/images/edit.png') }}" alt="icon">
+                    </button> --}}
+                    <a class="edit-btn btn btn-primary editusers" data-toggle="modal" data-target="#exampleModal" data-id="{{ encrypt($users->id) }}">
+                        Edit{{-- <img src="{{ asset('/images/delete.png') }}" alt="icon"> --}}
+                    </a>
+                    <a data-id="{{ encrypt($users->id) }}" type="button" class="btn btn-primary delete-btn" id="deleteUser">
+                        Delete{{-- <img src="{{ asset('/images/delete.png') }}" alt="icon"> --}}
+                    </a>
                 </td>
             </tr>
         @endforeach
