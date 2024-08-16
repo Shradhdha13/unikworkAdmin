@@ -7,52 +7,79 @@
         <div class="content-wrapper">
           <div class="row">
             <div class="col-md-12 grid-margin">
-              <div class="card text-white bg-flat-color-1">
+              <div class="card text-white bg-flat-color-1 full-card">
                 <div class="card-body pb-0">
               <div class="row">
                 <div class="col-12">
                   {{-- <h3 class="font-weight-bold">Welcome {{ Auth::user()->name }}</h3> --}}
-                  {{-- <h3 class="font-weight-bold">Welcome Admin</h3> --}}
-                    <div class="row align-items-center dashboard">
-                      <div class="row col-md-12 col-sm-6 counter">
+                  <h4 class="txt-dark">Welcome Admin</h4>
+                  {{-- <p class="card-title">Welcome Admin</p> --}}
+                    <div class="align-items-center dashboard">
+                      <div class="row counter">
                         {{-- <div class="row"> --}}
-                          <div class="col-md-3 mb-4 stretch-card transparent">
+                          {{-- <div class="col-md-3 mb-4 stretch-card transparent">
                             <div class="card card-tale">
-                              <div class="card-body">
+                              <div class="card-body col-span-2">
                                 <p class="mb-4">Total Contact Data</p>
                                 <p class="fs-38 mb-2">{{ $contactCount }}</p>
                               </div>
+                              <div class="col-span-1">
+                                <img src="{{asset('images/counter_ico.svg')}}" width="20px">
+                              </div>
+                            </div>
+                          </div> --}}
+                          <div class="col-md-3 mb-4 stretch-card transparent">
+                            <div class="card card-tale d-flex flex-row align-items-center">
+                              <div class="d-flex flex-column col-span-2">
+                                <p class="mb-4">Total Contact Data</p>
+                                <p class="fs-38 mb-2">{{ $contactCount }}</p>
+                              </div>
+                              <div class="d-flex align-items-center col-span-1 ico-radious">
+                                <img src="{{ asset('images/counter_ico.svg') }}" width="20px" alt="Icon">
+                              </div>
                             </div>
                           </div>
+                          
                           <div class="col-md-3 mb-4 stretch-card transparent">
-                            <div class="card card-dark-blue">
-                              <div class="card-body">
+                            <div class="card card-tale card-dark-blue d-flex flex-row align-items-center">
+                              <div class="d-flex flex-column col-span-2">
                                 <p class="mb-4">Total Careers Data</p>
                                 <p class="fs-38 mb-2">{{ $careerCount }}</p>
+                              </div>
+                              <div class="d-flex align-items-center col-span-1 ico-radious">
+                                <img src="{{ asset('images/counter_ico.svg') }}" width="20px" alt="Icon">
                               </div>
                             </div>
                           </div>
                         {{-- </div> --}}
                         {{-- <div class="row"> --}}
                           <div class="col-md-3 mb-4 stretch-card transparent">
-                            <div class="card card-light-blue">
-                              <div class="card-body">
+                            <div class="card card-tale d-flex flex-row align-items-center">
+                              <div class="d-flex flex-column col-span-2">
                                 <p class="mb-4">Monthly Contact Data</p>
                                 <div class="d-flex">
                                   <p class="fs-38 mr-4">{{ $contactMonthlyCount }}</p>
-                                  <p>{{ $contactPr }}% (30 days)</p>
+                                  {{-- <p>{{ $contactPr }}%</p> --}}
+                                  {{-- <p>{{ $contactPr }}% (30 days)</p> --}}
                                 </div>
+                              </div>
+                              <div class="d-flex align-items-center col-span-1 ico-radious">
+                                <img src="{{ asset('images/counter_ico.svg') }}" width="20px" alt="Icon">
                               </div>
                             </div>
                           </div>
                           <div class="col-md-3 mb-4 stretch-card transparent">
-                            <div class="card card-light-danger">
-                              <div class="card-body">
+                            <div class="card card-light-danger card-tale d-flex flex-row align-items-center">
+                              <div class="d-flex flex-column col-span-2">
                                 <p class="mb-4">Monthly Careers Data</p>
                                 <div class="d-flex">
                                   <p class="fs-38 mr-4">{{ $careerMonthlyCount }}</p>
-                                  <p>{{ $careerPr }}% (30 days)</p>
+                                  {{-- <p>{{ $careerPr }}%</p> --}}
+                                  {{-- <p>{{ $careerPr }}% (30 days)</p> --}}
                                 </div>
+                              </div>
+                              <div class="d-flex align-items-center col-span-1 ico-radious">
+                                <img src="{{ asset('images/counter_ico.svg') }}" width="20px" alt="Icon">
                               </div>
                             </div>
                           </div>
@@ -150,7 +177,7 @@
                         </section>
                       </div> --}}
                       
-                      <div class="col col-md-6 chart">
+                      {{-- <div class="col col-md-6 chart">
                         <div class="card">
                           <div class="card-body">
                            <div class="d-flex justify-content-between">
@@ -161,8 +188,8 @@
                             <canvas id="sales-chart"></canvas>
                           </div>
                         </div>
-                      </div>
-                      <div class="col col-md-6 blog">
+                      </div> --}}
+                      {{-- <div class="col col-md-6 blog">
                         <div class="card">
                           <div class="card-body">
                             <p class="card-title">Blogs</p>
@@ -182,7 +209,7 @@
                             </ul>
                           </div>
                         </div>
-                      </div>
+                      </div> --}}
                     </div>
                 </div>
               </div>

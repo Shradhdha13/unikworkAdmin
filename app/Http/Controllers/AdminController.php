@@ -56,7 +56,8 @@ class AdminController extends Controller
         $this->user = new User();
     }
 
-    public function login(){
+    public function login()
+    {
         return redirect('admin/dashboard');
     }
 
@@ -73,22 +74,22 @@ class AdminController extends Controller
         $contactMonthlyCount = $this->contactus::where('created_at', '>=', $date)->count();
 
         $careerPr = $contactPr = 0;
-        if($careerCount>0) {
+        if ($careerCount > 0) {
             $careerPr = ($careerMonthlyCount * 100) / $careerCount;
         }
 
-        if($contactCount) {
+        if ($contactCount) {
             $contactPr = ($contactMonthlyCount * 100) / $contactCount;
         }
 
         $contactCounts = [];
         $careerCounts = [];
-        for($i=1; $i<=12; $i++){
+        for ($i = 1; $i <= 12; $i++) {
             $contactCounts[] = $this->contactus::whereMonth('created_at', $i)->count();
             $careerCounts[] = $this->careers::whereMonth('created_at', $i)->count();
         }
-        $counts['contactDataCount'] = json_encode($contactCounts,JSON_NUMERIC_CHECK);
-        $counts['careerDataCount'] = json_encode($careerCounts,JSON_NUMERIC_CHECK);
+        $counts['contactDataCount'] = json_encode($contactCounts, JSON_NUMERIC_CHECK);
+        $counts['careerDataCount'] = json_encode($careerCounts, JSON_NUMERIC_CHECK);
 
         $blogData = $this->post::all();
 
@@ -153,7 +154,7 @@ class AdminController extends Controller
     public function updateStatus(Request $request)
     {
         $getCareers = $this->requirements::where('id', $request->id)->update(['status' => $request->status]);
-        return response()->json(['success'=>'Status change successfully.']);
+        return response()->json(['success' => 'Status change successfully.']);
     }
 
     public function viewCareer()
@@ -161,6 +162,7 @@ class AdminController extends Controller
         $careerView = $this->requirements::latest()->get();
         return view('admin/view-careers', compact('careerView'));
     }
+
 
     public function deleteCareer($id)
     {
@@ -185,15 +187,16 @@ class AdminController extends Controller
         }
         $manage = json_encode($requirement);
 
-        $careerEditRec = [ 
-            'technology' => $request->tech_name,     
+        $careerEditRec = [
+            'technology' => $request->tech_name,
             'qualification' => $request->qualification,
             'experience' => $request->experience,
             'location' => $request->location,
             'time' => $request->time,
             'salary' => $request->salary,
             'requirement' => $manage,
-            'position' => $request->position];
+            'position' => $request->position
+        ];
 
         $id = $request->edit_career_id;
         $this->requirements::where('id', $id)->update($careerEditRec);
@@ -206,10 +209,55 @@ class AdminController extends Controller
         return view('admin/contact-view', compact('contactView'));
     }
 
-    public function CareerView()
+    public function CareerView(Request $request)
     {
-        $careerView = $this->careers::latest()->paginate(100);
-        return view('admin/career-view', compact('careerView'));
+        try {
+            $experience = $this->careers::groupBy('experience')->pluck('experience', 'id');
+            $location = $this->careers::groupBy('location')->pluck('location', 'id');
+            $requirements = $this->careers::with('requirementDetail')->get();
+            $technologies = [];
+            foreach ($requirements as $requirement) {
+                $details = $requirement->requirementDetail;
+                if ($details instanceof \Illuminate\Database\Eloquent\Collection) {
+                    foreach ($details as $detail) {
+                        // Add technology to the array if it's not already present
+                        if ($detail->technology && !in_array($detail->technology, $technologies)) {
+                            $technologies[] = $detail->technology;
+                        }
+                    }
+                } else {
+                    // If requirementDetail is a single object
+                    if ($details->technology && !in_array($details->technology, $technologies)) {
+                        $technologies[] = $details->technology;
+                    }
+                }
+            }
+            // dd($technologies);
+            if ($request->ajax()) {
+                $careerView = $this->careers->newQuery();
+                if ($request->has('exp') && !empty($request->exp)) {
+                    $careerView = $careerView->where('experience', $request->exp);
+                }
+                if ($request->has('req') && !empty($request->req)) {
+                    $careerView->whereHas('requirementDetail', function ($query) use ($request) {
+                        $query->where('technology', $request->req);
+                    });
+                }
+                if ($request->has('lcn') && !empty($request->lcn)) {
+                    $careerView = $careerView->where('location', $request->lcn);
+                }
+
+                $careerView = $careerView->orderBy('id', 'DESC')->paginate(10);
+
+                // dd($careerView);
+                $data['status'] = 1;
+                $data['data'] = View::make('admin.career.data', compact('careerView'))->render();
+                return response()->json($data);
+            }
+            return view('admin.career.career-view', compact('experience', 'technologies', 'location'));
+        } catch (Exception $e) {
+            abort(500);
+        }
     }
 
     public function contactDelete($id)
@@ -221,9 +269,9 @@ class AdminController extends Controller
     public function careerDelete($id)
     {
         $careers = $this->careers::find($id);
-        if(!is_null($careers)){
-            if(file_exists('public/career_images/cv/'.$careers->cv)){
-                unlink('public/career_images/cv/'.$careers->cv);
+        if (!is_null($careers)) {
+            if (file_exists('public/career_images/cv/' . $careers->cv)) {
+                unlink('public/career_images/cv/' . $careers->cv);
             }
             $careers->delete();
         }
@@ -243,44 +291,42 @@ class AdminController extends Controller
 
     public function users(Request $request)
     {
-        try{
-            if($request->ajax()){
+        try {
+            if ($request->ajax()) {
                 $result = $this->user;
-                if(!empty($request->search))
-                {
-                    $result = $result->where('firstname','like','%'.$request->search.'%');
+                if (!empty($request->search)) {
+                    $result = $result->where('firstname', 'like', '%' . $request->search . '%');
                 }
                 $result = $result->paginate(50);
                 $data = View::make('admin.users.data', compact('result'))->render();
-    
+
                 return response()->json(['data' => $data]);
             }
             return view('admin.users.index');
-        }
-        catch(Exception $e) {
+        } catch (Exception $e) {
             abort(500);
         }
     }
 
     public function addUser(Request $request)
     {
-        try{
+        try {
             $id = '';
-            if($request->usersid != null) {
+            if ($request->usersid != null) {
                 $userEditRec = [
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'email' => $request->email,
-                    'role' => $request->role];
+                    'role' => $request->role
+                ];
 
-                if($request->password != null) {
+                if ($request->password != null) {
                     $userEditRec['password'] = Hash::make($request->password);
                 }
 
                 $id = $request->usersid;
                 $this->user::where('id', $id)->update($userEditRec);
-            }
-            else{
+            } else {
                 $addUser = $this->user;
                 $addUser->firstname = $request->firstname;
                 $addUser->lastname = $request->lastname;
@@ -289,41 +335,37 @@ class AdminController extends Controller
                 $addUser->role = $request->role;
                 $addUser->save();
             }
-    
+
             return view('admin.users.index');
-        }
-        catch(Exception $e) {
+        } catch (Exception $e) {
             abort(500);
         }
     }
 
     public function editUser($id)
     {
-        try{
+        try {
             $id = decrypt($id);
             $data = $this->user->where('id', $id)->first();
             return [
                 'status' => 'true',
                 'data' => $data
             ];
-        }
-        catch(Exception $e) {
+        } catch (Exception $e) {
             abort(500);
         }
     }
 
     public function deleteUser($id)
     {
-        try{
+        try {
             $id = decrypt($id);
             $this->user::find($id)->delete();
             return [
                 'status' => 200
             ];
-        }
-        catch(Exception $e) {
+        } catch (Exception $e) {
             abort(500);
         }
     }
 }
-
