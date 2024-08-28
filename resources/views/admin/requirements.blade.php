@@ -11,9 +11,17 @@
                         <div class="col-md-12 grid-margin">
                             <div class="row">
                                 <div class="col-12">
-                                    <h4 class="card-title ml-0 mb-4">Add Career</h4><br>
+                                    <div class="d-flex">
+                                        <a href="{{route('view-career')}}" class="pr-3"><img src="{{asset('images/backArrow.svg')}}"></a>
+                                        <h4 class="card-title ml-0 mb-4">Add Career</h4>
+                                    </div><br>
                                     <form class="forms-sample" method="post" action="{{ route('add-requirements') }}" id="add_career">
+                                        
                                         @csrf
+                                        <div class="text-right">
+                                            <button type="submit" class="btn btn-primary mr-2">Save</button>
+                                            <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-6 form-group">
                                                 <label for="tech_name">Technology Name</label>
@@ -78,8 +86,8 @@
                                             </div>
                                         </div>
                                     
-                                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button>
+                                        {{-- <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                        <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button> --}}
                                     </form>
                                     
                                 </div>

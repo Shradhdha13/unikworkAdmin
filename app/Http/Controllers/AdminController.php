@@ -157,10 +157,21 @@ class AdminController extends Controller
         return response()->json(['success' => 'Status change successfully.']);
     }
 
-    public function viewCareer()
+    public function viewCareer(Request $request)
     {
-        $careerView = $this->requirements::latest()->get();
-        return view('admin/view-careers', compact('careerView'));
+        try {
+            if ($request->ajax()) {
+                $careerView = $this->requirements::latest()->paginate(100);
+                $data['status'] = 1;
+                $data['data'] = View::make('admin.career.data', compact('careerView'))->render();
+                return response()->json($data);
+            }
+
+            $careerView = $this->requirements::latest()->paginate(100);
+            return view('admin/career/view-careers', compact('careerView'));
+        } catch (Exception $e) {
+            abort(500);
+        }
     }
 
 
@@ -203,10 +214,20 @@ class AdminController extends Controller
         return redirect('admin/view-career')->with('msg', 1);
     }
 
-    public function ContactView()
+    public function ContactView(Request $request)
     {
+        try {
+            if ($request->ajax()) {
+                $contactView = $this->contactus::latest()->paginate(100);
+                $data['status'] = 1;
+                $data['data'] = View::make('admin.contact.data', compact('contactView'))->render();
+                return response()->json($data);
+            }
+        } catch (Exception $e) {
+            abort(500);
+        }
         $contactView = $this->contactus::latest()->paginate(100);
-        return view('admin/contact-view', compact('contactView'));
+        return view('admin/contact/contact-view', compact('contactView'));
     }
 
     public function CareerView(Request $request)
@@ -247,14 +268,14 @@ class AdminController extends Controller
                     $careerView = $careerView->where('location', $request->lcn);
                 }
 
-                $careerView = $careerView->orderBy('id', 'DESC')->paginate(10);
+                $careerView = $careerView->orderBy('id', 'DESC')->paginate(20);
 
                 // dd($careerView);
                 $data['status'] = 1;
-                $data['data'] = View::make('admin.career.data', compact('careerView'))->render();
+                $data['data'] = View::make('admin.resume.data', compact('careerView'))->render();
                 return response()->json($data);
             }
-            return view('admin.career.career-view', compact('experience', 'technologies', 'location'));
+            return view('admin.resume.career-view', compact('experience', 'technologies', 'location'));
         } catch (Exception $e) {
             abort(500);
         }
@@ -266,16 +287,18 @@ class AdminController extends Controller
         return redirect('admin/contact-view');
     }
 
-    public function careerDelete($id)
+    public function careerDelete(Request $request)
     {
-        $careers = $this->careers::find($id);
+        // dd($request->id);
+        $careers = $this->careers::find($request->id);
         if (!is_null($careers)) {
             if (file_exists('public/career_images/cv/' . $careers->cv)) {
                 unlink('public/career_images/cv/' . $careers->cv);
             }
             $careers->delete();
         }
-        return redirect('admin/career-view');
+        // return redirect('admin/career-view');
+        return;
     }
 
     public function admin()

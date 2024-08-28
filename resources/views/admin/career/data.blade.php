@@ -1,67 +1,53 @@
-<table  class="table table-bordered table-striped">
-    {{-- <table id="example2" class="table table-bordered table-striped"> --}}
+<table id="example2" class="table table-bordered table-striped">
     <thead>
     <tr>
-        {{-- <th width="50px"><input type="checkbox" id="master"></th> --}}
         <th>ID</th>
-        <th style="width: 105px">Date</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
+        <th>Technology Name</th>
+        {{-- <th>Qualification</th> --}}
         <th>Experience</th>
-        <th>Expected Salary</th>                                        
-        <th>Requirement</th>
         <th>Location</th>
-        {{-- <th>Portfolio</th> --}}
-        {{-- <th>CV</th> --}}
+        {{-- <th>Time</th> --}}
+        <th>Salary</th>
+        {{-- <th>Requirement</th> --}}
+        {{-- <th>Position</th> --}}
         <th>Action</th>
     </tr>
     </thead>
     <tbody>
         @foreach($careerView as $careerData)
             <tr>
-                {{-- <td><input type="checkbox" class="sub_chk" data-id="{{$careerData->id}}"></td> --}}
+                {{-- <td>{{ $loop->iteration }}</td> --}}
                 <td>{{ ((($careerView->currentPage() - 1 ) * $careerView->perPage() ) + $loop->iteration) . '.' }}</td>
-                <td>{{ $careerData->created_at->format('d/m/y') }} &nbsp;<br> {{ $careerData->created_at->format('g:i A') }}</td>
-                <td>{{ $careerData->firstname }} {{ $careerData->lastname }}</td>
-                <td>{{ $careerData->email }}</td>
-                <td>{{ $careerData->phone }}</td>
-                <td>{{ $careerData->experience }}</td>
-                <td>{{ $careerData->expected_salary ?: '-' }}</td>                                            
-                <td>{{ isset($careerData->requirementDetail['technology']) ? $careerData->requirementDetail['technology'] : '' }}</td>
-                <td>{{ ($careerData->location) ? $careerData->location : '-' }}</td>
+                <td>{{ $careerData->technology}}</td>
+                {{-- <td>{{ $careerData->qualification}}</td> --}}
+                <td>{{ $careerData->experience}}</td>
+                <td>{{ $careerData->location}}</td>
+                {{-- <td>{{ $careerData->time}}</td> --}}
+                <td>{{ $careerData->salary}}</td>
                 {{-- <td>
-                    @if($careerData->portfolio != null)
-                        <a href="{{ URL::to('public/career_images/portfolio').'/'.$careerData->portfolio }}" target="_blank"><span class="mdi mdi-download"></span></a>
-                    @else
-                        -
-                    @endif
+                    @foreach(json_decode($careerData->requirement) as $value)
+                        <p>{{ $value }}</p>
+                    @endforeach
                 </td> --}}
-{{--                                                 
-                <td>
-                    @if($careerData->cv != null)
-                        <a href="{{ URL::to('public/career_images/cv').'/'.$careerData->cv }}" target="_blank" class="btn btn-primary"><i class="fas fa-download"></i></a>
-                    @else
-                        -
-                    @endif
-                </td> --}}
-                <td class="d-flex text-center">
-                    @if($careerData->cv != null)
-                    <div class="ml-2"><a href="{{ URL::to('public/career_images/cv').'/'.$careerData->cv }}" target="_blank" class="btn btn-primary">
-                        Download{{-- <i class="fas fa-download"></i> --}}
+                {{-- <td>{{ $careerData->position}}</td> --}}
+                <td class="d-flex text-center">                                                
+                    <div class="ml-2"><a href="{{ URL::to("admin/edit-career/$careerData->id") }}" class="btn btn-primary edit-career p3">
+                        Edit {{-- <i class="mdi mdi-border-color d-block"></i> --}}
                     </a></div>
-                @else
-                    -
-                @endif
+
+                    <div class="ml-2"><a href="{{ URL::to("admin/delete-career/$careerData->id") }}" class="btn btn-primary delete-career p3">
+                        Delete {{-- <i class="mdi mdi-delete d-block" class="text-center"></i> --}}
+                     </a></div>
                 
-                <div class="ml-2"><a href="{{ URL::to("admin/career-delete/$careerData->id") }}" class="btn btn-primary career-delete">
-                    Delete {{-- <i class="fas fa-trash-alt"></i> --}}
-                </a>
-            </div></td>
-                
+                    {{-- <div class="switcher">
+                        <label for="{{'status-'.$careerData->id }}">
+                            <input type="checkbox" data-id="{{$careerData->id}}" id="{{ 'status-'.$careerData->id }}" value="{{ $careerData->status }}" class="switch-action" {{$careerData->status == 1 ? 'checked' : ''}}/><span><small></small></span>
+                        </label>
+                    </div> --}}
+                </td>
             </tr>
         @endforeach
-    </tbody>                                  
+    </tbody>
   </table>
   <div>
     {!! $careerView->links() !!}

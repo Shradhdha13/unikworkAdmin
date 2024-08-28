@@ -16,14 +16,23 @@
                     <div class="col-md-12 grid-margin">
                         <div class="row">
                             <div class="col-12">
-                                <h4 class="card-title ml-0 mb-4">Update Career</h4><br>
+                                <div class="d-flex">
+                                    <a href="{{route('view-career')}}" class="pr-3 pt-2"><img src="{{asset('images/backArrow.svg')}}"></a>
+                                    <h4 class="card-title ml-0 mb-4">Update Career</h4>
+                                </div><br>
+                                {{-- <h4 class="card-title ml-0 mb-4">Update Career</h4><br> --}}
                                 <form class="forms-sample" method="post" action="{{ route('edit-career-data') }}" id="edit_career">
                                     @csrf
 
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary mr-2">Update</button>
+                                        <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button>
+                                    </div>
+
                                     <input type="hidden" name="edit_career_id" value="{{$careerRec->id}}">
                                     <div class="row">
-                                        <div class="form-grou col-md-6">
-                                            <label class="text-dark">Technology Name</label>
+                                        <div class="form-group col-md-6">
+                                            <label>Technology Name</label>
                                             <input type="text" class="form-control" id="tech_name" name="tech_name" value="{{ $careerRec->technology }}">
                                         </div>
                                         <div class="form-group col-md-6">
@@ -85,9 +94,6 @@
                                             <input type="number" class="form-control" id="position" name="position" value="{{ $careerRec->position }}">
                                         </div>
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                    <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button>
                 
                                   </form>
                             </div>
