@@ -95,7 +95,7 @@
         
       
 
-        <?php if($currentRoute === 'dashboard' || $currentRoute === 'view-career' || $currentRoute === 'career-view' || $currentRoute === 'contact-view' || $currentRoute === 'users'): ?>
+       
           <?php if(in_array(Auth::user()->role, [1,2,3])): ?>
             <li class="nav-item <?php echo e(Request::is('/view-career') ? 'active' : ''); ?>">
               <a class="nav-link" href="<?php echo e(route('view-career')); ?>">
@@ -103,7 +103,6 @@
                 <span class="menu-title side_ico">View Career</span>
               </a>
             </li>
-          <?php endif; ?>
           <?php endif; ?>
 
           <?php if($currentRoute === 'requirements'): ?>

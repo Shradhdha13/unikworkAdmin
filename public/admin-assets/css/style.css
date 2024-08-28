@@ -26157,6 +26157,7 @@ select.border-dark.tt-hint:focus {
   vertical-align: top;
   margin-bottom: .5rem;
   color: #000;
+  font-weight: 600;
 }
 
 .form-group.has-danger .form-control,
@@ -28522,7 +28523,7 @@ dl li {
   font-size: 1rem;
   /* font-size: .875rem; */
   /* background: #ffac8a; */
-  color: #343434;
+  color: #000;
 }
 
 /* .table tr:nth-child(even) {
@@ -36905,23 +36906,64 @@ div.switcher label input.active+span {
   width: 100% !important;
 }
 
-.select2-selection__rendered {
+.select2-selection__arrow {
   position: relative;
-  display: inline-block !important;
-  padding-right: 20px !important;
-  /* Add some padding to accommodate the icon */
+  display: inline-flex;
+  align-items: center;
+  /* Center align the content vertically */
+  padding-left: 10px;
+  /* Add padding to the left to make space for the pipe icon */
 }
 
-.select2-selection__rendered::after {
-  content: '|' !important;
-  /* The pipe icon */
-  position: absolute !important;
-  right: 10px !important;
-  /* Position the icon on the right side */
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  font-size: 18px !important;
-  /* Adjust font size as needed */
+.select2-selection__arrow::before {
+  content: '|';
+  font-size: 20px;
+  color: #00000070;
+  /* margin-right: -35px; */
+  position: relative;
+  right: 20px;
+  /* height: 28px; */
+  top: 5px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-width: 6px 6px 0 6px !important;
+  margin-left: -9px !important;
+  margin-top: -2px !important;
+  top: 68% !important;
+}
+
+.select2-results__options {
+  max-height: 200px;
+  /* Set a max height to enable scrolling */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
+.select2-results__options::-webkit-scrollbar {
+  width: 7px;
+  /* Width of the scrollbar */
+}
+
+.select2-results__options::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Background color of the track */
+  border-radius: 10px;
+  /* Rounded corners for the track */
+}
+
+.select2-results__options::-webkit-scrollbar-thumb {
+  background: #A9A9A9;
+  /* Color of the scrollbar thumb */
+  border-radius: 100px;
+  /* Rounded corners for the thumb */
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: #888 transparent transparent transparent !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: rgb(222, 235, 255) !important;
   color: #000 !important;
-  /* Adjust color as needed */
 }

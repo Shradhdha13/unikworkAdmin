@@ -68,7 +68,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/edit-career-data', [AdminController::class, 'editCareerData'])->name('edit-career-data');
         Route::get('/career-view', [AdminController::class, 'CareerView'])->name('career-view');
         Route::get('expfilter', [AdminController::class, 'expfilter'])->name('expfilter');
-        Route::get('/career-delete/{id}', [AdminController::class, 'careerDelete']);
+        Route::get('/career-delete', [AdminController::class, 'careerDelete'])->name('career_delete');
         // contact
         Route::get('/contact-view', [AdminController::class, 'ContactView'])->name('contact-view');
         Route::get('/contact-delete/{id}', [AdminController::class, 'contactDelete']);

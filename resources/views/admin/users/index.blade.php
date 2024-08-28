@@ -8,27 +8,30 @@
             <div class="card text-white bg-flat-color-1 full-card">
                 <div class="card-body pb-0">
             <div class="row add-user mb-4">
-                <div class="col-6 text-left">
-                    {{-- <h4 class="card-title ml-0 mb-4">Users Data</h4> --}}
+                <div class="col-6 text-left custom-grid">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         + Add User
                     </button>
                 </div>
                 
                 <div class="col-6">
-                    <div class="user-search">
+                    
+                    <div class="user-search form-group">
+                        <div class="col-4 right-side">
                         <input type="search" class="form-control" name="search" placeholder="search" id="livesearch" />
-                        <select class="filter-main form-control" name="users-filter" id="usersStatusFilter">
+                        </div>
+                        <div class="col-4 right-side">
+                        <select id="mySelectuser" class="form-group filter-main form-control" name="users-filter" id="usersStatusFilter" data-placeholder="Search User..." onchange="demo(this.value)">
+                            {{-- <option value="" selected>Choose Experience</option> --}}
                             <option value="">Show All</option>
                             <option value="1">Admin</option>
                             <option value="2">HR</option>
                             <option value="3">Project Manager</option>
                             <option value="4">Users</option>
                         </select>
-                        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Add User
-                        </button> --}}
+                        </div>
                     </div>
+                    
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -217,6 +220,10 @@
         });
     };
 
+
+    $(document).ready(function() {
+            $('#mySelectuser').select2();
+    });
     </script>
 
 @endsection
