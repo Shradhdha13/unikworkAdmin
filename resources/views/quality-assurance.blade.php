@@ -4,7 +4,7 @@
         <section class="banner-sec">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>QA</h1>
+                    <h1>QA: Quality Assurance</h1>
                 </div>
             </div>
         </section>
@@ -38,7 +38,7 @@
                               </g>
                             </g>
                         </svg>
-                        <h2>Foolproof Quality Assurance Solutions that Guarantee the Success of Your End Products</h2>
+                        <h2>Achieve Flawless Results with Our Expert Quality Assurance!</h2>
                         <p>Detecting and mitigating errors on your software products before deployment not only saves you time, but it helps you eliminate problems that may affect your business and result in you incurring avoidable losses. At Unikwork, we understand the importance of ensuring the quality of your products at all stages of the development cycle to reduce costs and the risk of failure.</p>
                         <p>Our quality assurance experts test your product against dozens of defined software development standards in the industry to ensure that they operate at peak performance and engage your users while aligning with your business objectives.</p>
 

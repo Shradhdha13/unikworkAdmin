@@ -1,6 +1,9 @@
+{{-- <button id="delete-selected" class="btn btn-primary">Delete All</button> --}}
+
 <table id="example2" class="table table-bordered table-striped">
     <thead>
     <tr>
+        {{-- <th><input type="checkbox" id="select-all"></th> --}}
         <th>ID</th>
         <th>Technology Name</th>
         {{-- <th>Qualification</th> --}}
@@ -16,6 +19,7 @@
     <tbody>
         @foreach($careerView as $careerData)
             <tr>
+                {{-- <td><input type="checkbox" class="select-row" value="{{ $careerData->id }}"></td> <!-- Row checkbox --> --}}
                 {{-- <td>{{ $loop->iteration }}</td> --}}
                 <td>{{ ((($careerView->currentPage() - 1 ) * $careerView->perPage() ) + $loop->iteration) . '.' }}</td>
                 <td>{{ $careerData->technology}}</td>
@@ -35,9 +39,14 @@
                         Edit {{-- <i class="mdi mdi-border-color d-block"></i> --}}
                     </a></div>
 
-                    <div class="ml-2"><a href="{{ URL::to("admin/delete-career/$careerData->id") }}" class="btn btn-primary delete-career p3">
-                        Delete {{-- <i class="mdi mdi-delete d-block" class="text-center"></i> --}}
-                     </a></div>
+                    {{-- <div class="ml-2"><a href="{{ URL::to("admin/delete-career/$careerData->id") }}" class="btn btn-primary delete-career p3">
+                        Delete 
+                       // <i class="mdi mdi-delete d-block" class="text-center"></i>
+                     </a></div> --}}
+
+                     <div class="ml-2"><a data-id="{{ encrypt($careerData->id) }}" type="button" class="btn btn-primary delete-career p3" id="deletecareer">
+                        Delete{{-- <img src="{{ asset('/images/delete.png') }}" alt="icon"> --}}
+                    </a></div>
                 
                     {{-- <div class="switcher">
                         <label for="{{'status-'.$careerData->id }}">
@@ -52,3 +61,53 @@
   <div>
     {!! $careerView->links() !!}
 </div>
+
+{{-- 
+<script>
+    $(document).ready(function() {
+        // Select/Deselect all checkboxes
+        $('#select-all').on('click', function() {
+            var isChecked = $(this).prop('checked');
+            $('.select-row').prop('checked', isChecked);
+        });
+
+        // Delete selected rows
+        $('#delete-selected').on('click', function() {
+            var selectedIds = [];
+            $('.select-row:checked').each(function() {
+                selectedIds.push($(this).val());
+            });
+
+            if (selectedIds.length > 0) {
+                if (confirm('Are you sure you want to delete selected records?')) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        url: '{{ route("delete-careers") }}',
+                        type: 'POST',
+                        data: { ids: selectedIds },
+                        success: function(response) {
+                            if (response.success) {
+                                // Optionally reload the table data
+                                getcareersdata(qstring);
+                            } else {
+                                alert('Failed to delete records.');
+                            }
+                        },
+                        error: function(e) {
+                            console.error('Error deleting records:', e);
+                        }
+                    });
+                }
+            } else {
+                alert('No records selected.');
+            }
+        });
+
+        
+    });
+</script> --}}

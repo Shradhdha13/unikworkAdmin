@@ -23,9 +23,16 @@
                 <td>{{ $contactData->iam}}</td>
                 <td>{{ $contactData->help}}</td>
                 {{-- <td>{{ $contactData->message}}</td> --}}
-                <td><a href="{{ URL::to("admin/contact-delete/$contactData->id") }}" class="btn btn-primary contact-delete">
-                    Delete{{-- <i class="mdi mdi-delete"></i> --}}
-                </a></td>
+                <td>
+                    {{-- <a href="{{ URL::to("admin/contact-delete/$contactData->id") }}" class="btn btn-primary contact-delete">
+                    Delete
+                     //<i class="mdi mdi-delete"></i> 
+                    </a> --}}
+
+                      <div class="ml-2"><a data-id="{{ encrypt($contactData->id) }}" type="button" class="btn btn-primary delete-blog p3" id="deleteContact">
+                        Delete{{-- <img src="{{ asset('/images/delete.png') }}" alt="icon"> --}}
+                    </a></div>
+            </td>
             </tr>
         @endforeach
     </tbody>

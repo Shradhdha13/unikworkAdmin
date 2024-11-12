@@ -5,7 +5,7 @@
         <section class="banner-sec">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>Privacy Policy</h1>
+                    <h1>Uniwork: Privacy Policy</h1>
                 </div>
             </div>
         </section>

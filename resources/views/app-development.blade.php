@@ -5,7 +5,7 @@
         <section class="banner-sec">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>App Development</h1>
+                    <h1>Mobile App Development</h1>
                 </div>
             </div>
         </section>
@@ -45,7 +45,7 @@
                               <path id="Path_10825" data-name="Path 10825" d="M469.845,258.539a1.923,1.923,0,0,1-1.863-1.456l-1.923-7.692a1.923,1.923,0,0,1,3.731-.935l1.923,7.692a1.924,1.924,0,0,1-1.4,2.333A1.861,1.861,0,0,1,469.845,258.539Z" transform="translate(12.923 13.845)" fill="#231f20"/>
                             </g>
                         </svg>
-                        <h2>Mobile App Development</h2>
+                        <h2>Interactive Apps that Keep Your Audience Engaged</h2>
                         <h3>Interactive Apps that Keep Your Audience Engaged</h3>
                         <p>At Unikwork, we provide comprehensive custom mobile app development services, helping businesses create and develop mobile apps that encourage user engagement and help them establish brand loyalty. We follow an elaborate process that includes multiple stages of development, testing, deployment, and more. We utilize the latest technology in the market to ensure that it keeps up with the dynamic nature of technology in your business domain.</p>
                         <p>From native Android to iOS apps, Unikwork develops high-functioning mobile applications services for businesses, creating the right balance between visuals, functionality, and ease of use to ensure that end users have phenomenal experiences using them.</p>

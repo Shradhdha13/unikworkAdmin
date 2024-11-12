@@ -2,6 +2,7 @@
     {{-- <table id="example2" class="table table-bordered table-striped"> --}}
     <thead>
     <tr>
+        <th><input type="checkbox" id="select-all"></th>
         {{-- <th width="50px"><input type="checkbox" id="master"></th> --}}
         <th>ID</th>
         <th style="width: 105px">Date</th>
@@ -20,6 +21,7 @@
     <tbody>
         @foreach($careerView as $careerData)
             <tr>
+                <td><input type="checkbox" class="select-row" value="{{ $careerData->id }}"></td>
                 {{-- <td><input type="checkbox" class="sub_chk" data-id="{{$careerData->id}}"></td> --}}
                 <td>{{ ((($careerView->currentPage() - 1 ) * $careerView->perPage() ) + $loop->iteration) . '.' }}</td>
                 <td>{{ $careerData->created_at->format('d/m/y') }} &nbsp;<br> {{ $careerData->created_at->format('g:i A') }}</td>
@@ -61,6 +63,7 @@
                     <a class="btn btn-primary career-delete" onclick="deleteresume('{{$careerData->id}}')">
                         Delete 
                     </a>
+                   
             </div></td>
                 
             </tr>
@@ -70,3 +73,85 @@
   <div>
     {!! $careerView->links() !!}
 </div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Select/Deselect all checkboxes
+        $('#select-all').on('click', function() {
+            var isChecked = $(this).prop('checked');
+            $('.select-row').prop('checked', isChecked);
+        });
+    
+        // Delete selected rows
+        $('#delete-selected').on('click', function() {
+            var selectedIds = [];
+            $('.select-row:checked').each(function() {
+                selectedIds.push($(this).val());
+            });
+    
+            if (selectedIds.length > 0) {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'You won\'t be able to revert this!',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#f57f50',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+    
+                        $.ajax({
+                            url: '{{ route("delete-careers") }}',
+                            type: 'POST',
+                            data: { ids: selectedIds },
+                            success: function(response) {
+                                if (response.success) {
+                                    // Optionally reload the table data
+                                    getCareerData(qstring);
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Your records have been deleted.',
+                                        'success'
+                                    );
+                                } else {
+                                    Swal.fire(
+                                        'Failed!',
+                                        'Failed to delete records.',
+                                        'error'
+                                    );
+                                }
+                            },
+                            error: function(e) {
+                                console.error('Error deleting records:', e);
+                                Swal.fire(
+                                    'Error!',
+                                    'An error occurred while deleting records.',
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            } else {
+                Swal.fire(
+                    'No records selected!',
+                    'Please select at least one record to delete.',
+                    'warning'
+                );
+            }
+        });
+    
+    
+    });
+
+
+    </script>

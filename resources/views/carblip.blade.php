@@ -5,7 +5,7 @@
         <section class="banner-sec">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>Carblip</h1>
+                    <h1>Case Studies: Carblip </h1>
                 </div>
             </div>
         </section>

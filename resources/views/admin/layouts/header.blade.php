@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="SEO_title" content="@yield('SEO_title')">
     
     <title>Admin | Unikwork</title>
     <link rel="stylesheet" href="{{ url('public/admin-assets/vendors/feather/feather.css') }}">
@@ -11,11 +12,13 @@
     <link rel="stylesheet" href="{{ url('public/admin-assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('public/admin-assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link href="{{url('public/images/favicon.png')}}" rel="icon">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('vendor/bootstrap/css/font-awesome.min.css')}}" rel="stylesheet">
+    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> --}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="{{asset('vendor/googlefont.css')}}" rel="stylesheet">
+{{-- <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> --}}
 
 <link href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <!-- DataTables -->
@@ -24,6 +27,8 @@
   <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
   <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
+
+  {{-- <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}"> --}}
 
 </head>
 <body>
@@ -49,8 +54,8 @@
         <h3 class="txt-dark">Resume</h3>
         @elseif ($currentRoute === 'contact-view')
         <h3 class="txt-dark">Contact Form Data</h3>
-        @elseif ($currentRoute === 'blog')
-        <h3 class="txt-dark">Blog</h3>
+        @elseif ($currentRoute === 'bloglist')
+        <h3 class="txt-dark">Blog List</h3>
         @elseif ($currentRoute === 'users')
         <h3 class="txt-dark">Users</h3>
         @elseif ($currentRoute === 'requirements')
@@ -161,7 +166,11 @@
       
           @if(in_array(Auth::user()->role, [1,3]))
             <li class="nav-item">
-              <a class="nav-link" href="{{ URL::to('admin/blog') }}">
+              {{-- <a class="nav-link" href="{{ URL::to('admin/blog') }}">
+                <span class="nav-icon-blog"></span>
+                <span class="menu-title side_ico">Blog</span>
+              </a> --}}
+              <a class="nav-link" href="{{ URL::to('admin/bloglist') }}">
                 <span class="nav-icon-blog"></span>
                 <span class="menu-title side_ico">Blog</span>
               </a>
@@ -183,6 +192,16 @@
                 {{-- <img src="{{ asset('images/user_ico.svg') }}" alt="Users Icon" class="{{ Request::is('/users') ? 'active-icon' : '' }}"> --}}
                 <span class="nav-icon-user"></span>
                 <span class="menu-title side_ico">Users</span>
+              </a>
+            </li>
+          @endif
+
+          @if(in_array(Auth::user()->role, [1,2]))
+            <li class="nav-item {{ Request::is('/seo_details') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('seo_details') }}">
+                {{-- <img src="{{ asset('images/user_ico.svg') }}" alt="seo_details Icon" class="{{ Request::is('/seo_details') ? 'active-icon' : '' }}"> --}}
+                <span class="nav-icon-seo"></span>
+                <span class="menu-title side_ico">SEO Page Details</span>
               </a>
             </li>
           @endif

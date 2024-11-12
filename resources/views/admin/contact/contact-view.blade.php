@@ -70,4 +70,44 @@
             }
         });
     }
+
+     // Delete Contacts
+     $(document).on('click', '#deleteContact', function(e) {
+        e.preventDefault();
+        var id = $(this).data('id');
+        swal({
+            title: 'Are you sure want to delete this Contact?',
+            icon: 'warning',
+            buttons: ["Cancel", "Yes!"],
+        })
+        .then((Done) => {
+            if(Done){
+                contactDelete(id);
+            }
+        });
+    });
+
+    function contactDelete(id) {
+        let url = "{{ route('contact-delete', ':id') }}";
+        url = url.replace(':id', id);
+        console.log(url);
+        $.ajax({
+            type: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: url,
+            success: function(data) {
+                contactData(qstring);
+                if(data.status == 200){
+                    swal({
+                        title: "Contact deleted succsessfully",
+                        icon: "success",
+                        timer: 1500
+                    });
+                }
+            }
+        });
+    };
+
 </script>

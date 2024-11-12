@@ -7,10 +7,10 @@
                 <div class="row">
                     <div class="col col-lg-7 col-12 smart-soft">
                         <h1 class="wow fadeInUp">
-                            Smart Software Development <br>
-                            Solutions that <br>
-                            Revolutionize the Way you <br>
-                            Do Business
+                            Unikwork: Innovative<br>
+                            Software Development<br>
+                            Agency for Modern<br>
+                            Business
                         </h1>
                         <div class="transforming-btn wow fadeInUp">
                             <a href="{{ route('case-studies') }}" class="btn button-primary">Explore Our Portfolio</a>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="col col-6">
                         <div class="expert-app-content wow fadeInUp">
-                            <h2>Our Mission is simple, to create and develop apps <br> that connect you and your customers better.
+                            <h2>Connecting You and Your Customers Through<br>Innovative App Development.
                             </h2>
                             <p>Unikwork is one of the leading technology service-based companies online, providing end-to-end, business, and enterprise-level technology development solutions that power digital transformation. </p>
                             <p>At Unikwork, we are renowned for formulating and executing unique, high-impact, and innovative services at a global scale to address all your application development, business process, and technical knowledge requirements. Our exceptional team has experience across multiple industries and is more than equipped to lead your idea from concept to completion, just the way you envisioned it. </p>

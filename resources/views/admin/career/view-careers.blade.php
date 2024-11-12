@@ -15,6 +15,9 @@
                                 <a href="{{ url('admin/requirements') }}" class="btn btn-primary">
                                     + Add Career
                                 </a>
+
+                                {{-- <button id="delete-selected" class="btn btn-primary">Delete All</button> --}}
+
                                 
                                 {{-- <div class="form-group">
                                     <div class="custom-file text-left">
@@ -135,6 +138,45 @@
                 info: "Showing _START_ to _END_ of _TOTAL_ entries"
             }
         });
+
+    // Delete deletecareer
+     $(document).on('click', '#deletecareer', function(e) {
+        e.preventDefault();
+        var id = $(this).data('id');
+        swal({
+            title: 'Are you sure want to delete this Career?',
+            icon: 'warning',
+            buttons: ["Cancel", "Yes!"],
+        })
+        .then((Done) => {
+            if(Done){
+                careerDelete(id);
+            }
+        });
+    });
+
+    function careerDelete(id) {
+        let url = "{{ route('delete-career', ':id') }}";
+        url = url.replace(':id', id);
+        console.log(url);
+        $.ajax({
+            type: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: url,
+            success: function(data) {
+                getcareersdata(qstring);
+                if(data.status == 200){
+                    swal({
+                        title: "Career deleted succsessfully",
+                        icon: "success",
+                        timer: 1500
+                    });
+                }
+            }
+        });
+    };
 
     </script>
 @endsection

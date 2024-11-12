@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('content'); ?>
     <main id="careers">
         
@@ -43,7 +44,7 @@
                               <path id="Path_10971" data-name="Path 10971" d="M118,647a1,1,0,0,1-1,1H71a1,1,0,0,1,0-2h46A1,1,0,0,1,118,647Z" fill="#231f20"/>
                             </g>
                         </svg>
-                        <h2>Join the Technical Revolution</h2>
+                        <h2>Be Part of the Tech Evolution: Transform Tomorrow with Us!</h2>
                         <p>Partner with Unikwork and contribute towards creating powerful software development solutions that move businesses forward. We are always on the search for talent and work hard to empower our employees, nurture them and provide them with growth opportunities that accelerate their careers.</p>
                         <a href="#current_opening" class="btn button-primary mt-0 mr-3 mb-3">Join Our Team</a>
                         

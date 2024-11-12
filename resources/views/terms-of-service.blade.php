@@ -5,7 +5,7 @@
         <section class="banner-sec">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>Terms of Services</h1>
+                    <h1>Terms Of Service</h1>
                 </div>
             </div>
         </section>
