@@ -180,8 +180,17 @@ class PostsController extends Controller
     function displayBlog()
     {
         $blog = DB::table('blog')->get();
+
+        $pagename = seoPage('Blog page');
+
+        $data['page_name'] = isset($pagename['page_name']) && !empty($pagename['page_name']) ? $pagename['page_name'] : 'Sitemap page';
+        $data['title'] = isset($pagename['title']) && !empty($pagename['title']) ? $pagename['title'] : 'Sitemap | Unikwork Systems';
+        $data['description'] = isset($pagename['description']) && !empty($pagename['description']) ? $pagename['description'] : 'Unikwork provides quality software development services that allow you to create quality software products that perform.';
+        // dd($data);
+        $data['key_word'] = isset($pagename['key_word']) && !empty($pagename['key_word']) ? $pagename['key_word'] : 'software development, software development solutions, technology service, software testing, software products';
+
         // dd($blog);
-        return view('blogs', compact('blog'));
+        return view('blogs', compact('blog', 'data'));
     }
 
     /*Details of Blog*/
@@ -190,11 +199,11 @@ class PostsController extends Controller
         // $blogDetail = DB::table('blog')->where('slug', $slug)->first();
         $blogDetail = Blog::with('users')->where('slug', $slug)->first();
         // dd($blogDetail);
-        $pagename = seoPage('Blog page');
-        $data['page_name'] = isset($pagename['page_name']) && !empty($pagename['page_name']) ? $pagename['page_name'] : 'Blog page';
-        $data['SEO_title'] = isset($pagename['SEO_title']) && !empty($pagename['SEO_title']) ? $pagename['SEO_title'] : 'Worldclass application development agency | Unikwork Systems';
-        $data['meta_desc'] = isset($pagename['meta_desc']) && !empty($pagename['meta_desc']) ? $pagename['meta_desc'] : 'Smart Software Development Solutions that Revolutionize the Way you Do Business';
-        $data['meta_keyword'] = isset($pagename['meta_keyword']) && !empty($pagename['meta_keyword']) ? $pagename['meta_keyword'] : 'software development, software development solutions, technology service, software testing, software products';
+
+        $data['title'] = isset($blogDetail['SEO_title']) && !empty($blogDetail['SEO_title']) ? $blogDetail['SEO_title'] : 'Worldclass application development agency | Unikwork Systems';
+        $data['description'] = isset($blogDetail['meta_desc']) && !empty($blogDetail['meta_desc']) ? $blogDetail['meta_desc'] : 'Smart Software Development Solutions that Revolutionize the Way you Do Business';
+        // $data['page_name'] = isset($pagename['page_name']) && !empty($pagename['page_name']) ? $pagename['page_name'] : 'Blog page';
+        $data['key_word'] = isset($blogDetail['meta_keyword']) && !empty($blogDetail['meta_keyword']) ? $blogDetail['meta_keyword'] : 'software development, software development solutions, technology service, software testing, software products';
         // dd($data);
         return view('blogDetial', compact('blogDetail', 'data'));
     }

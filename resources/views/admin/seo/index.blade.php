@@ -1,6 +1,6 @@
 @extends('admin.layouts.layout')
 
-@section('title', 'SEO Page Details')
+@section('pagename', $pagename)
 
 @section('content')
     <div class="main-panel">

@@ -42,28 +42,10 @@
         {{-- <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
         </button> --}}
-        @php
-          $currentRoute = request()->route()->getName();
-        @endphp
+       
 
-        @if ($currentRoute === 'dashboard')
-        <h3 class="txt-dark">Dashboard</h3>
-        @elseif ($currentRoute === 'view-career')
-        <h3 class="txt-dark">View Career</h3>
-        @elseif ($currentRoute === 'career-view')
-        <h3 class="txt-dark">Resume</h3>
-        @elseif ($currentRoute === 'contact-view')
-        <h3 class="txt-dark">Contact Form Data</h3>
-        @elseif ($currentRoute === 'bloglist')
-        <h3 class="txt-dark">Blog List</h3>
-        @elseif ($currentRoute === 'users')
-        <h3 class="txt-dark">Users</h3>
-        @elseif ($currentRoute === 'requirements')
-        <h3 class="txt-dark">Career</h3>
-        @else
-        <h3 class="txt-dark">Dashboard</h3>
-        @endif
-     
+        <h3 class="txt-dark"> @yield('pagename')</h3>
+   
     
           {{-- <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-settings d-none d-lg-flex dropdown">
@@ -135,7 +117,7 @@
             </li>
           @endif
 
-          @if ($currentRoute === 'requirements')
+          {{-- @if ($currentRoute === 'requirements')
           @if(in_array(Auth::user()->role, [1,2,3]))
           <li class="nav-item {{ Request::is('/requirements') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('requirements') }}">
@@ -144,7 +126,7 @@
             </a>
           </li>
         @endif
-        @endif
+        @endif --}}
       
           @if(in_array(Auth::user()->role, [1,2,3]))
             <li class="nav-item {{ Request::is('/career-view') ? 'active' : '' }}">

@@ -401,7 +401,7 @@ class UnikworkController extends Controller
         $data['SEO_title'] = isset($pagename['SEO_title']) && !empty($pagename['SEO_title']) ? $pagename['SEO_title'] : 'Worldclass application development agency | Unikwork Systems';
         $data['meta_desc'] = isset($pagename['meta_desc']) && !empty($pagename['meta_desc']) ? $pagename['meta_desc'] : 'Smart Software Development Solutions that Revolutionize the Way you Do Business';
         $data['meta_keyword'] = isset($pagename['meta_keyword']) && !empty($pagename['meta_keyword']) ? $pagename['meta_keyword'] : 'software development, software development solutions, technology service, software testing, software products';
-        return view('blog', compact('data'));
+        return view('blogDetail', compact('data'));
     }
 
     /**

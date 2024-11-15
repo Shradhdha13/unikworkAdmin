@@ -4,8 +4,8 @@
         height: auto !important;
     }
 </style>
-
-@section('title','Home')
+@section('pagename', $pagename)
+{{-- @section('title','Home') --}}
 
 @section('content')
         <div class="main-panel">

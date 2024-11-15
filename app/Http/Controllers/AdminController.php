@@ -94,6 +94,7 @@ class AdminController extends Controller
      */
     public function index()
     {
+        $pagename = "Dashboard";
         $careerCount = $this->careers::count();
         $contactCount = $this->contactus::count();
 
@@ -121,7 +122,7 @@ class AdminController extends Controller
 
         $blogData = $this->post::all();
 
-        return view('admin/index', compact('careerCount', 'contactCount', 'careerMonthlyCount', 'contactMonthlyCount', 'careerPr', 'contactPr', 'blogData', 'counts'));
+        return view('admin/index', compact('careerCount', 'contactCount', 'careerMonthlyCount', 'contactMonthlyCount', 'careerPr', 'contactPr', 'blogData', 'counts', 'pagename'));
     }
 
     /**
@@ -129,7 +130,8 @@ class AdminController extends Controller
      */
     public function requirements()
     {
-        return view('admin/requirements');
+        $pagename = 'View Career';
+        return view('admin/requirements', compact('pagename'));
     }
 
     /**
@@ -155,7 +157,6 @@ class AdminController extends Controller
         //     'position' => 'required',
         // ],
         // ['requirement[].required' => 'The requirement field is required.']);
-
 
         $requirement = [];
         foreach ($request->input('requirement') as $key => $value) {
@@ -189,6 +190,7 @@ class AdminController extends Controller
     public function viewCareer(Request $request)
     {
         try {
+            $pagename = 'View Career';
             if ($request->ajax()) {
                 $careerView = $this->requirements::latest()->paginate(100);
                 $data['status'] = 1;
@@ -197,7 +199,7 @@ class AdminController extends Controller
             }
 
             $careerView = $this->requirements::latest()->paginate(100);
-            return view('admin/career/view-careers', compact('careerView'));
+            return view('admin/career/view-careers', compact('careerView', 'pagename'));
         } catch (Exception $e) {
             abort(500);
         }
@@ -222,8 +224,9 @@ class AdminController extends Controller
 
     public function editCareer($id)
     {
+        $pagename = "View Career";
         $careerRec = $this->requirements::find($id);
-        return view('admin/edit-career', compact('careerRec'));
+        return view('admin/edit-career', compact('careerRec', 'pagename'));
     }
 
     public function editCareerData(Request $request)
@@ -256,6 +259,7 @@ class AdminController extends Controller
     public function ContactView(Request $request)
     {
         try {
+            $pagename = 'Contact';
             if ($request->ajax()) {
                 $contactView = $this->contactus::latest()->paginate(100);
                 $data['status'] = 1;
@@ -266,12 +270,13 @@ class AdminController extends Controller
             abort(500);
         }
         $contactView = $this->contactus::latest()->paginate(100);
-        return view('admin/contact/contact-view', compact('contactView'));
+        return view('admin/contact/contact-view', compact('contactView', 'pagename'));
     }
 
     public function CareerView(Request $request)
     {
         try {
+            $pagename = 'Resume';
             $experience = $this->careers::groupBy('experience')->pluck('experience', 'id');
             $location = $this->careers::groupBy('location')->pluck('location', 'id');
             $requirements = $this->careers::with('requirementDetail')->get();
@@ -314,7 +319,7 @@ class AdminController extends Controller
                 $data['data'] = View::make('admin.resume.data', compact('careerView'))->render();
                 return response()->json($data);
             }
-            return view('admin.resume.career-view', compact('experience', 'technologies', 'location'));
+            return view('admin.resume.career-view', compact('experience', 'technologies', 'location', 'pagename'));
         } catch (Exception $e) {
             // dd($e);
             abort(500);
@@ -364,6 +369,7 @@ class AdminController extends Controller
     public function users(Request $request)
     {
         try {
+            $pagename = 'Users';
             $roleSearch = $this->user::groupBy('role')->pluck('role', 'id');
             if ($request->ajax()) {
                 $result = $this->user->newQuery();
@@ -381,7 +387,7 @@ class AdminController extends Controller
                 return response()->json(['data' => $data]);
                 // return response()->json($data);
             }
-            return view('admin.users.index', compact('roleSearch'));
+            return view('admin.users.index', compact('roleSearch', 'pagename'));
         } catch (Exception $e) {
             abort(500);
         }
@@ -390,6 +396,7 @@ class AdminController extends Controller
     function seo_details(Request $request)
     {
         try {
+            $pagename = 'SEO Details';
             if ($request->ajax()) {
                 $result = $this->seo->newQuery();
                 $result = $result->paginate(100);
@@ -399,7 +406,7 @@ class AdminController extends Controller
                 return response()->json(['data' => $data]);
                 // return response()->json($data);
             }
-            return view('admin.seo.index');
+            return view('admin.seo.index', compact('pagename'));
         } catch (Exception $e) {
             abort(500);
         }
@@ -533,6 +540,7 @@ class AdminController extends Controller
     function blogs(Request $request)
     {
         try {
+            $pagename = 'Blogs';
             if ($request->ajax()) {
                 $blogData = $this->blogs::with('users')->latest()->paginate(100);
                 $data['status'] = 1;
@@ -543,7 +551,7 @@ class AdminController extends Controller
             abort(500);
         }
         $blogData = $this->blogs::latest()->paginate(100);
-        return view('admin.blogs.index', compact('blogData'));
+        return view('admin.blogs.index', compact('blogData', 'pagename'));
     }
 
     function addblogs()
@@ -617,12 +625,13 @@ class AdminController extends Controller
     public function editblog($id)
     {
         try {
+            $pagename = 'Update Blog';
             $id = decrypt($id);
             $updateBlog = $this->blogs::find($id);
             $auth_id = User::all();
             $categoryList = Category::all();
             // dd($updateBlog);
-            return view('admin.blogs.edit-blog', compact('updateBlog', 'auth_id', 'categoryList'));
+            return view('admin.blogs.edit-blog', compact('updateBlog', 'auth_id', 'categoryList', 'pagename'));
         } catch (\Throwable $th) {
             dd($th);
             //throw $th;

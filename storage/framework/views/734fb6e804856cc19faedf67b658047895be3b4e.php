@@ -40,28 +40,10 @@
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         
-        <?php
-          $currentRoute = request()->route()->getName();
-        ?>
+       
 
-        <?php if($currentRoute === 'dashboard'): ?>
-        <h3 class="txt-dark">Dashboard</h3>
-        <?php elseif($currentRoute === 'view-career'): ?>
-        <h3 class="txt-dark">View Career</h3>
-        <?php elseif($currentRoute === 'career-view'): ?>
-        <h3 class="txt-dark">Resume</h3>
-        <?php elseif($currentRoute === 'contact-view'): ?>
-        <h3 class="txt-dark">Contact Form Data</h3>
-        <?php elseif($currentRoute === 'bloglist'): ?>
-        <h3 class="txt-dark">Blog List</h3>
-        <?php elseif($currentRoute === 'users'): ?>
-        <h3 class="txt-dark">Users</h3>
-        <?php elseif($currentRoute === 'requirements'): ?>
-        <h3 class="txt-dark">Career</h3>
-        <?php else: ?>
-        <h3 class="txt-dark">Dashboard</h3>
-        <?php endif; ?>
-     
+        <h3 class="txt-dark"> <?php echo $__env->yieldContent('pagename'); ?></h3>
+   
     
           
 
@@ -110,16 +92,7 @@
             </li>
           <?php endif; ?>
 
-          <?php if($currentRoute === 'requirements'): ?>
-          <?php if(in_array(Auth::user()->role, [1,2,3])): ?>
-          <li class="nav-item <?php echo e(Request::is('/requirements') ? 'active' : ''); ?>">
-            <a class="nav-link" href="<?php echo e(route('requirements')); ?>">
-              <span class="nav-icon-career"></span>
-              <span class="menu-title side_ico">View Career</span>
-            </a>
-          </li>
-        <?php endif; ?>
-        <?php endif; ?>
+          
       
           <?php if(in_array(Auth::user()->role, [1,2,3])): ?>
             <li class="nav-item <?php echo e(Request::is('/career-view') ? 'active' : ''); ?>">

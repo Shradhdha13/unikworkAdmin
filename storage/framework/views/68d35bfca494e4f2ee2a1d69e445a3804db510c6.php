@@ -1,6 +1,5 @@
 
-
-<?php $__env->startSection('title','Home'); ?>
+<?php $__env->startSection('pagename', $pagename); ?>
 
 <?php $__env->startSection('content'); ?>
       <div class="main-panel">

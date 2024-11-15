@@ -1,5 +1,5 @@
 {{-- @extends("layouts.apps",['data' => $data]) --}}
-@extends("layouts.apps")
+@extends("layouts.apps",['data' => $data])
 @section("content")
     {{-- Banner --}}
     <section class="banner-sec">
@@ -41,7 +41,7 @@
                         <a href="{{route('blogdetails',['slug'=>$item->slug])}}"><img src="storage/app/public/blogs/{{$item->feature_img}}" alt="Feature Image"></a>
                     </div>
                     <div class="blog-content-main">
-                        <p class="d-inline-block mt-3">{{$item->category_id}}</p>
+                        {{-- <p class="d-inline-block mt-3">{{$item->category_id}}</p> --}}
                         <h4><a href="{{route('blogdetails',['slug'=>$item->slug])}}">{{$item->title}}</a></h4>
                         {{-- {{$item->slug}} --}}
                     </div>
