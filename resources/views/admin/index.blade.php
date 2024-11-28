@@ -1,9 +1,67 @@
 @extends('admin.layouts.layout')
 @section('pagename', $pagename)
+<style>
+  /* Custom styles for the toast */
+  #toast {
+    background-color: #ffffff !important;
+   
+  text-align: center;
+  border-radius: 2px;
+  position: fixed;
+  z-index: 1;
+  left: 100% !important;
+  bottom: 30px;
+  font-size: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+  opacity: 1 !important;
+  }
+  .toast-success {
+      background-color: rgb(255, 255, 255) !important; /* White background */
+      color: rgb(6, 107, 6) !important;     
+  }
 
+  /* Custom icon color */
+  .toast-success .toast-icon {
+      color: rgb(5, 97, 5) !important;  /* Icon color green */
+  }
+
+  /* Custom progress bar color */
+  .toast-success .toast-progress {
+      background-color: rgb(4, 71, 4) !important; /* Green progress bar */
+      filter: none !important;
+  }
+
+  /* Optional: Style for close button (green color) */
+  .toast-close-button {
+      color: rgb(3, 63, 3) !important; /* Green color for close button */
+  }
+  #toast-container>.toast-success.toast-image-icon {
+    background-image: url('http://localhost/unikworkAdmin/public/images/check.png') !important; 
+}
+    .toast-success:hover{
+      box-shadow: none !important;
+    }
+</style>
 @section('content')
       <div class="main-panel">
         <div class="content-wrapper">
+          <!-- resources/views/home.blade.php (or your target view) -->
+          @if(session('toast'))
+          <script>
+              window.onload = function() {
+                  // Display the toast message with an icon
+                  toastr.options = {
+                      "closeButton": true,       // Optional: To show a close button
+                      "progressBar": true,       // Optional: To show a progress bar
+                      "positionClass": "toast-top-right", // Optional: Position of the toast
+                      "iconClass": "toast-image-icon" // Optional: Specific class for success toast (predefined icon)
+                  };
+                  toastr.success("{{ session('toast') }}");
+              };
+          </script>
+          @endif
+
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="card text-white bg-flat-color-1 full-card">
@@ -223,6 +281,12 @@
 
 @section('js')
   <script src="{{ asset('admin-assets/js/main.js') }}"></script>
+  <!-- In the <head> section of your layout -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+<!-- Before closing </body> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
   <script>
     var contactCount = <?php echo $counts['contactDataCount']?>;
     var careerCount = <?php echo $counts['careerDataCount']?>;

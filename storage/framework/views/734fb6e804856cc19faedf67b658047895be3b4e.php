@@ -54,7 +54,7 @@
             <div class="dropdown-options">
               <form id="logout-form" action="<?php echo e(url('admin/logout')); ?>" method="POST" class="mb-0">
                 <?php echo csrf_field(); ?>
-                <button type="submit" class="dropdown-item"><i class="ti-power-off text-primary"></i>Logout</button>
+                <button id="logout-button" type="submit" class="dropdown-item"><i class="ti-power-off text-primary"></i>Logout</button>
               </form>
             </div>
           </div>
@@ -145,8 +145,31 @@
           <?php endif; ?>
         </ul>
       </nav>
-      
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    document.getElementById('logout-button').addEventListener('click', function (e) {
+      e.preventDefault();
+    // Show SweetAlert confirmation
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to log out?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, logout!',
+      cancelButtonText: 'Cancel',
+      reverseButtons: true,
+      customClass: {
+        confirmButton: 'btn btn-primary',  // Change confirm button to orange (Bootstrap class 'btn-warning')
+        cancelButton: 'btn btn-secondary'  // Optional: Change cancel button to gray (Bootstrap class 'btn-secondary')
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // If the user confirms, submit the logout form
+        document.getElementById('logout-form').submit();
+      }
+    });
+  });
+
 document.addEventListener('DOMContentLoaded', function() {
     const profileContainer = document.querySelector('.profile-container');
     const dropdownMenu = document.querySelector('.dropdown-menu');

@@ -557,10 +557,11 @@ class AdminController extends Controller
     function addblogs()
     {
         // dd("dsfd");
+        $pagename = 'Blogs';
         $auth_id = User::all();
         $categoryList = Category::all();
         // dd($categoryList);
-        return view('admin.blogs.addblog', compact('auth_id', 'categoryList'));
+        return view('admin.blogs.addblog', compact('auth_id', 'categoryList', 'pagename'));
     }
     /**
      * @param Request $request

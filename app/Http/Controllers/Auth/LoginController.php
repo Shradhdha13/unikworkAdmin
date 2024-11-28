@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -36,5 +37,14 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        // You can also check for specific roles or conditions here if needed
+        $message = "Sign in Successfully"; // Customize this message
+
+        // Redirect to the home/index page with a 'toast' message
+        return redirect()->route('dashboard')->with('toast', $message);
     }
 }
