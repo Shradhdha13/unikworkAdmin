@@ -1,6 +1,6 @@
 @extends('admin.layouts.layout')
 
-@section('title','Home')
+@section('pagename',$pagename)
 @section('content')
     <div class="main-panel">
         <div class="content-wrapper">
@@ -9,6 +9,7 @@
 
                     <div class="row">
                         <div class="col-md-6 custom-grid">
+                            <button id="delete-selected" class="btn btn-primary">Delete All</button>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
@@ -155,9 +156,9 @@
             type: 'GET',
             dataType: 'json',
             success: function(data) {
-                $('#careerData').DataTable().destroy();
-                $('#careerData').find('tbody').html(data.data);
-                $('#careerData').DataTable().draw();
+                // $('#careerData').DataTable().destroy();
+                // $('#careerData').find('tbody').html(data.data);
+                // $('#careerData').DataTable().draw();
                 getCareerData(qstring);
 
                 // // If the pagination is part of the response, make sure to update it

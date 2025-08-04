@@ -4,7 +4,7 @@
         <section class="banner-sec">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>Internet Of Things</h1>
+                    <h1>IOT Internet Of Things</h1>
                 </div>
             </div>
         </section>

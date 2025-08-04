@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use View;
 use WebDevEtc\BlogEtc\Models\Post;
+use App\Models\Blog;
 use WebDevEtc\BlogEtc\Requests\SearchRequest;
 use WebDevEtc\BlogEtc\Services\CaptchaService;
 use WebDevEtc\BlogEtc\Services\CategoriesService;
@@ -109,7 +110,7 @@ class PostsController extends Controller
             $categoryID = $category->id;
 
             // TODO - make configurable
-            $title = config('blogetc.blog_index_category_title', 'Viewing blog posts in ').$category->category_name;
+            $title = config('blogetc.blog_index_category_title', 'Viewing blog posts in ') . $category->category_name;
         }
 
         $posts = $this->postsService->indexPaginated(config('blogetc.per_page'), $categoryID);
@@ -141,7 +142,7 @@ class PostsController extends Controller
         // $usingCaptcha = $this->captchaService->getCaptchaObject();
 
         // if (null !== $usingCaptcha && method_exists($usingCaptcha, 'runCaptchaBeforeShowingPosts')) {
-            // $usingCaptcha->runCaptchaBeforeShowingPosts($request, $blogPost);
+        // $usingCaptcha->runCaptchaBeforeShowingPosts($request, $blogPost);
         // }
 
         return view(
@@ -156,23 +157,51 @@ class PostsController extends Controller
 
     public function search(Request $request)
     {
-        if($request->ajax()){
-            if($request->search != ''){
-                $searchData = DB::table('blog_etc_posts')->where('title','like','%'.$request->search.'%')
-                            ->orWhere('subtitle','like','%'.$request->search.'%')->get();
-            }
-            else{
+        if ($request->ajax()) {
+            if ($request->search != '') {
+                $searchData = DB::table('blog_etc_posts')->where('title', 'like', '%' . $request->search . '%')
+                    ->orWhere('subtitle', 'like', '%' . $request->search . '%')->get();
+            } else {
                 $searchData = [];
             }
 
             $output = '';
-            if(count($searchData)>0){
+            if (count($searchData) > 0) {
                 $output = View::make('vendor.blogetc.search_blog', compact('searchData'))->render();
-            }
-            else{
+            } else {
                 $output .= 'No Results';
             }
         }
         return $output;
+    }
+
+
+    /*Display Blogs*/
+    function blogs()
+    {
+        $blog = Blog::with('category')->get();
+        $pagename = seoPage('Blog page');
+
+        $data['page_name'] = isset($pagename['page_name']) && !empty($pagename['page_name']) ? $pagename['page_name'] : 'Sitemap page';
+        $data['title'] = isset($pagename['title']) && !empty($pagename['title']) ? $pagename['title'] : 'Sitemap | Unikwork Systems';
+        $data['description'] = isset($pagename['description']) && !empty($pagename['description']) ? $pagename['description'] : 'Unikwork provides quality software development services that allow you to create quality software products that perform.';
+        // dd($data);
+        $data['key_word'] = isset($pagename['key_word']) && !empty($pagename['key_word']) ? $pagename['key_word'] : 'software development, software development solutions, technology service, software testing, software products';
+        return view('blogs', compact('blog', 'data'));
+    }
+
+    /*Details of Blog*/
+    function blogDetails($slug)
+    {
+        // $blogDetail = DB::table('blog')->where('slug', $slug)->first();
+        $blogDetail = Blog::with('users')->where('slug', $slug)->first();
+        // dd($blogDetail);
+
+        $data['title'] = isset($blogDetail['SEO_title']) && !empty($blogDetail['SEO_title']) ? $blogDetail['SEO_title'] : 'Worldclass application development agency | Unikwork Systems';
+        $data['description'] = isset($blogDetail['meta_desc']) && !empty($blogDetail['meta_desc']) ? $blogDetail['meta_desc'] : 'Smart Software Development Solutions that Revolutionize the Way you Do Business';
+        // $data['page_name'] = isset($pagename['page_name']) && !empty($pagename['page_name']) ? $pagename['page_name'] : 'Blog page';
+        $data['key_word'] = isset($blogDetail['meta_keyword']) && !empty($blogDetail['meta_keyword']) ? $blogDetail['meta_keyword'] : 'software development, software development solutions, technology service, software testing, software products';
+        // dd($data);
+        return view('blogDetial', compact('blogDetail', 'data'));
     }
 }

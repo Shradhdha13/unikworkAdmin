@@ -5,7 +5,7 @@
         <section class="banner-sec">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>Our Portfolio</h1>
+                    <h1>UnikWork Portfolio</h1>
                 </div>
             </div>
         </section>
@@ -13,7 +13,7 @@
         {{-- Our Portfolio --}}
         <section class="web-portfollio">
             <div class="container pt-5 pb-5">
-                <h2 class="section-title wow fadeInUp mt-0 pt-5">Explore Our Portfolio</h2>
+                <h2 class="section-title wow fadeInUp mt-0 pt-5">Portfolio Showcase: Where Vision Comes to Life</h2>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="portfollio-img-sec">

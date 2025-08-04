@@ -15,7 +15,7 @@
             <div class="container mobile-app cross-sec">
                 <div class="row align-items-center">
                     <div class="col col-md-6 wow fadeInUp cross-alter-content">
-                        <h2>Discover Our Portfolio</h2>
+                        <h2>Discover Our Work</h2>
                         <h4>Take a look at our case studies and discover how we can help businesses just like yours get a competitive edge in their domain.</h4>
                         <p>Our case studies detail the way we capture the vision of our clients and closely collaborate with them to develop apps and software, tailored to their organizational goals.</p>
                         <p>Our team of experienced professionals formulate custom software development strategies and lead your projects from the drawing board to deployment, working with a high degree of professionalism to deliver high-impact technical solutions that address your business needs.</p>

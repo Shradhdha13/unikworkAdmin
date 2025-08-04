@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
     <title>{{$data['title'] ?? 'Worldclass application development agency | Unikwork Systems'}}</title>
-    <meta name="description" content="{{$data['description'] ?? 'Smart Software Development Solutions that Revolutionize the Way you Do Business'}}">
-    <meta name="keywords" content="{{$data['keywords'] ?? 'Technology solutions, Technology services, Software development services'}}">
+    {{-- <title>{{$seotitle}}</title> --}}
+    <meta name='description' content="{{$data['description'] ?? 'Unikwork provides quality software development services that allow you to create quality software products that perform.'}}">
+    {{-- <meta name="description" content="{{$data['description'] ?? 'Smart Software Development Solutions that Revolutionize the Way you Do Business'}}"> --}}
+    <meta name="key_word" content="{{$data['key_word'] ?? 'software development agency, custom software development company​,custom mobile app development services, custom website development'}}">
 
     <meta property="og:url" content="<?php echo URL::current();?>">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{$data['title']  ?? 'Worldclass application development agency | Unikwork Systems'}}">
-    <meta property="og:description" content="{{$data['description']  ?? 'Smart Software Development Solutions that Revolutionize the Way you Do Business'}}">
+    <meta property="og:description" content="{{$data["description"]  ?? 'Smart Software Development Solutions that Revolutionize the Way you Do Business'}}">
     <meta property="og:image" content="{{asset('images/unikwork-logo.png')}}">
 
     <meta property="twitter:url" content="<?php echo URL::current();?>">
@@ -27,7 +29,8 @@
     <link href="{{asset('images/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
     <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('vendor/bootstrap/css/font-awesome.min.css')}}" rel="stylesheet">
+    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> --}}
     <link href="{{url('public/css/style.css')}}" rel="stylesheet">
     {{-- <link href="https://www.unikwork.com/public/css/style.css" rel="stylesheet"> --}}
 </head>

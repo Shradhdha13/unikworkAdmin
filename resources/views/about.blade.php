@@ -6,7 +6,7 @@
         <section class="banner-sec">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>About Us</h1>
+                    <h1>Unikwork: About Us</h1>
                 </div>
             </div>
         </section>
@@ -17,7 +17,7 @@
                 <div class="row align-items-center">
                     <div class="col col-md-6 cross-alter-content">
                         <img src="{{ asset('images/about/we-empower-icon.svg') }}" widht="100px" height="100px" alt="about unikwork" class="illustration-sec-icon wow fadeInUp">
-                        <h2 class="wow fadeInUp">Powering Businesses with Innovative Technological Solutions, Since 2015</h2>
+                        <h2 class="wow fadeInUp">Since 2015: Innovating Technology for Business Growth</h2>
                         <p class="wow fadeInUp">At Unikwork, we offer a broad range of software development solutions that evolve with the dynamic nature of technology, helping you futureproof your mobile apps and websites with the latest features. We work closely with our clients throughout the development process and give them expert recommendations to help them improve their products.</p>
                         <p class="wow fadeInUp">Our innovative technology solutions are targeted at facilitating business transformation and growth while bringing value to our clients.</p>
                         <a href="{{ route('careers') }}" class="btn button-primary mt-0 wow fadeInUp">Become Part Of Unikwork</a>

@@ -4,7 +4,7 @@
         <section class="banner-sec">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>DevOps</h1>
+                    <h1>DevOps: Development Operations</h1>
                 </div>
             </div>
         </section>
@@ -52,7 +52,7 @@
                               </g>
                             </g>
                         </svg>
-                        <h2>Smart Solutions that Facilitate Faster Product Release</h2>
+                        <h2>Streamlined Launches, Smart Solutions: DevOps</h2>
                         <p>With technology constantly evolving, businesses need to bridge the gap between the development process and operations of their software products to streamline their digital transformation journey. At Unikwork, we help businesses speed up the time-to-market of their products while reducing the lead time between bug fixing and time to recovery without compromising on their quality, reliability, and performance.</p>
 
                         <div class="icon-points">

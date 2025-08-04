@@ -1,6 +1,6 @@
 @extends('admin.layouts.layout')
 
-@section('title','Home')
+@section('pagename',$pagename)
 
 @section('content')
         <div class="main-panel">
@@ -20,7 +20,7 @@
                                         @csrf
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                            <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button>
+                                            {{-- <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button> --}}
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 form-group">
@@ -83,6 +83,17 @@
                                                 <label for="position">Position</label>
                                                 <input type="number" class="form-control" id="position" name="position">
                                                 {{-- <label class="error text-danger">{{$errors->first('position')}}</label> --}}
+                                            </div>
+                                        
+
+                                            <div class="col-md-6 form-group">
+                                                <label for="status">Status</label>
+                                                <select id="mySelectstatus" class="form-control" name="status" data-placeholder="--Select Status--">
+                                                    <option value="1">Active</option>
+                                                    <option value="0">Deactive</option>
+                                                </select>
+                                                {{-- <input type="text" class="form-control" id="status" name="status"> --}}
+                                                {{-- <label class="error text-danger">{{$errors->first('SEO_title')}}</label> --}}
                                             </div>
                                         </div>
                                     

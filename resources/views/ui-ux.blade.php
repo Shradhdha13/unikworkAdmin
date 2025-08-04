@@ -37,7 +37,7 @@
                               <path id="Path_11097" data-name="Path 11097" d="M339.9,395.269a9.58,9.58,0,0,0-3.365-2.461,9.561,9.561,0,0,0-7.692,0,9.58,9.58,0,0,0-3.365,2.461,1.87,1.87,0,0,0-.481,1.269,1.825,1.825,0,0,0,.308,1.038l5.769,8.923a1.917,1.917,0,0,0,3.231,0l5.769-8.923a1.825,1.825,0,0,0,.308-1.038A1.87,1.87,0,0,0,339.9,395.269Zm-7.212,6.654-3.269-5.058a5.939,5.939,0,0,1,6.539,0Z" transform="translate(0.923 29.538)" fill="#231f20"/>
                             </g>
                         </svg>
-                        <h2>Create Unparalleled Experiences for Your Product Users</h2>
+                        <h2>Where Creativity Meets Function: UI/UX design service</h2>
                         <p>It is no secret that products that take long to respond drive even the most patient users away, especially when paired with aesthetically repulsive designs. At Unikwork, we help businesses like yours create unique digital experiences for their product users, drawing from the creativity, innovation, and expertise of our experienced UI/UX designers and developers.</p>
                         <p>From using the right visuals that align with your brand identity to integrating innovative features that improve the functionality of your products, our team works in close collaboration with you to ensure that we create premium quality designs that meet your business needs.</p>
 
