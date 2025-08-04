@@ -5,7 +5,7 @@
 @section('content')
         <div class="main-panel">
             <div class="content-wrapper">
-                <div class="card text-white bg-flat-color-1 full-cards">
+                <div class="card bg-flat-color-1 full-cards">
                     <div class="card-body pb-0">
                     <div class="row">
                         <div class="col-md-12 grid-margin">
@@ -20,7 +20,7 @@
                                         @csrf
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                            <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button>
+                                            {{-- <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button> --}}
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 form-group">
@@ -47,7 +47,8 @@
                                         <div class="row">
                                             <div class="col-md-12 form-group">
                                                 <label for="desc">Description</label>
-                                                <textarea class="form-control" id="desc" name="desc"></textarea>
+                                                <textarea name="desc" id="summernote"
+                                                class="form-control form-control-alternative" rows="5"></textarea>
                                                 <label class="error text-danger">{{$errors->first('desc')}}</label>
                                             </div>
                                         </div>
@@ -152,43 +153,21 @@
         });
     </script>
     @endif
-   <!-- Replace 'YOUR_API_KEY' with your actual TinyMCE API key -->
-    <script src="https://cdn.tiny.cloud/1/6c2kiuya8xpnq4bb4shiulqx9oaeq9zqum6xbd3rgv2y907e/tinymce/7.3/tinymce.min.js" referrerpolicy="origin"></script>
+    
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+<script src="{{asset('plugin/select2/js/select2.full.min.js')}}"></script>
 
     <script>
-        // $('#add_blog').validate({
-        //     rules: {
-        //         desc: {
-        //             required: true
-        //         },
-        //         qualification: {
-        //             required: true
-        //         },
-        //         experience: {
-        //             required: true
-        //         },
-        //         location: {
-        //             required: true
-        //         },
-        //         time: {
-        //             required: true
-        //         },
-        //         salary: {
-        //             required: true
-        //         },
-        //         'requirement[]': {
-        //             required: true
-        //         },
-        //         position: {
-        //             required: true
-        //         }
-        //     },
-        //     errorElement: 'span',
-        //     errorPlacement: function (error, element) {
-        //         error.addClass('invalid-feedback');
-        //         element.closest('.form-group').append(error);
-        //     }
-        // });
+
+$(document).ready(function() {
+        $('#summernote').summernote({ placeholder: 'Enter the Question',
+        tabsize: 2,
+        height: 100});
+        
+    });
+  
 
         $(document).ready(function() {
             $('#mySelectuser').select2();
@@ -247,14 +226,14 @@
     //     });
     // });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        tinymce.init({
-            selector: '#desc',
-            plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount',
-            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
-            content_css: '//www.tiny.cloud/css/codepen.min.css'
-        });
-    });
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     tinymce.init({
+    //         selector: '#desc',
+    //         plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount',
+    //         toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+    //         content_css: '//www.tiny.cloud/css/codepen.min.css'
+    //     });
+    // });
 
     </script>
 

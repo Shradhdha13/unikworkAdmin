@@ -12243,6 +12243,7 @@ button#cancle-btn {
   /* background-color: transparent; */
   border-color: #FF7F50;
   color: #ffff;
+  font-size: 16px;
 }
 
 .btn-primary:focus,
@@ -12252,6 +12253,7 @@ button#cancle-btn {
   color: #fff;
   background-color: #f57f50;
   border-color: #f57f50;
+  font-size: 16px;
   box-shadow: 0 0 0 0.2rem rgb(254 248 245);
 }
 
@@ -21696,7 +21698,7 @@ button.bg-dark:focus,
 }
 
 .font-weight-bold {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .font-weight-bolder {
@@ -30074,7 +30076,7 @@ body.avgrund-active {
 
 .grid-item {
   background: #FF7F50;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-radius: 8px;
 }
 

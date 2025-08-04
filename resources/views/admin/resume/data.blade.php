@@ -19,8 +19,9 @@
     </tr>
     </thead>
     <tbody>
+     @if ($careerView->count() > 0)
         @foreach($careerView as $careerData)
-            <tr>
+            <tr id="career-row-{{ $careerData->id }}" class="{{ $careerData->read == 0 ? 'font-weight-bold' : '' }}">
                 <td><input type="checkbox" class="select-row" value="{{ $careerData->id }}"></td>
                 {{-- <td><input type="checkbox" class="sub_chk" data-id="{{$careerData->id}}"></td> --}}
                 <td>{{ ((($careerView->currentPage() - 1 ) * $careerView->perPage() ) + $loop->iteration) . '.' }}</td>
@@ -49,9 +50,17 @@
                 </td> --}}
                 <td class="d-flex text-center">
                     @if($careerData->cv != null)
-                    <div class="ml-2"><a href="{{ URL::to('public/career_images/cv').'/'.$careerData->cv }}" target="_blank" class="btn btn-primary">
-                        Download{{-- <i class="fas fa-download"></i> --}}
-                    </a></div>
+                    {{-- <div class="ml-2">
+                        <a href="{{ URL::to('public/career_images/cv').'/'.$careerData->cv }}" target="_blank" class="btn btn-primary">
+                        Download
+                        </a>
+                    </div> --}}
+                    <a href="{{ URL::to('public/career_images/cv').'/'.$careerData->cv }}"
+                    class="btn btn-primary {{ $careerData->read == 0 ? 'btn-success font-weight-bold' : '' }}"
+                    id="download-btn-{{ $careerData->id }}"
+                    onclick="return markAsRead(event, {{ $careerData->id }})">
+                    Download
+                    </a>
                 @else
                     -
                 @endif
@@ -68,6 +77,11 @@
                 
             </tr>
         @endforeach
+        @else
+    <tr>
+        <td colspan="12" class="text-center">No records found.</td>
+    </tr>
+@endif
     </tbody>                                  
   </table>
   <div>
@@ -155,3 +169,37 @@
 
 
     </script>
+<script>
+   function markAsRead(event, id) {
+    event.preventDefault();
+
+    const btn = $('#download-btn-' + id);
+    const fileUrl = btn.attr('href');
+    const row = $('#career-row-' + id); // 💡 get the table row
+
+    $.ajax({
+        url: '{{ route("mark-as-read") }}',
+        type: 'POST',
+        data: {
+            _token: '{{ csrf_token() }}',
+            id: id
+        },
+        success: function(response) {
+            console.log("Read status updated");
+            btn.removeClass('btn-success font-weight-bold');
+            row.removeClass('font-weight-bold');
+            window.open(fileUrl, '_blank');
+        },
+        error: function(xhr, status, error) {
+            console.error("Error:", error);
+            window.open(fileUrl, '_blank');
+        }
+    });
+
+    return false;
+}
+</script>
+
+
+
+    

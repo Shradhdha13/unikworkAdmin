@@ -7,6 +7,7 @@
     <meta name="SEO_title" content="@yield('SEO_title')">
     
     <title>Admin | Unikwork</title>
+    
     <link rel="stylesheet" href="{{ url('public/admin-assets/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ url('public/admin-assets/vendors/ti-icons/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ url('public/admin-assets/css/style.css') }}">
@@ -14,7 +15,6 @@
     <link href="{{url('public/images/favicon.png')}}" rel="icon">
     <link href="{{asset('vendor/bootstrap/css/font-awesome.min.css')}}" rel="stylesheet">
     {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> --}}
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{{asset('vendor/googlefont.css')}}" rel="stylesheet">
@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
   <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker@3.1/daterangepicker.css" />
 
   {{-- <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}"> --}}
 

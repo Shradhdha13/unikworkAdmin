@@ -35,8 +35,8 @@
                     <li class="nav-item {{ Request::is('case-studies') || Request::is('case-studies/kooberi') || Request::is('case-studies/carblip') || Request::is('case-studies/quick') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('case-studies') }}">Case Studies</a>
                     </li>
-                    <li class="nav-item {{ Request::is('blog') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('blogetc.index') }}">Blog</a>
+                    <li class="nav-item {{ Request::is('blog') || Request::is('blogs') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('blogs') }}">Blog</a>
                     </li>
                     <li class="nav-item mr-0 {{ Request::is('contact-us') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('contact-us') }}">

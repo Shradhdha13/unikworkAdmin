@@ -20,7 +20,7 @@
                                         @csrf
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-primary mr-2">Update</button>
-                                            <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button>
+                                            {{-- <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button> --}}
                                         </div>
                                         <input type="hidden" name="id" value="{{$updateBlog->id}}">
                                         <div class="row">

@@ -35,8 +35,8 @@
                     <li class="nav-item <?php echo e(Request::is('case-studies') || Request::is('case-studies/kooberi') || Request::is('case-studies/carblip') || Request::is('case-studies/quick') ? 'active' : ''); ?>">
                         <a class="nav-link" href="<?php echo e(route('case-studies')); ?>">Case Studies</a>
                     </li>
-                    <li class="nav-item <?php echo e(Request::is('blog') ? 'active' : ''); ?>">
-                        <a class="nav-link" href="<?php echo e(route('blogetc.index')); ?>">Blog</a>
+                    <li class="nav-item <?php echo e(Request::is('blog') || Request::is('blogs') ? 'active' : ''); ?>">
+                        <a class="nav-link" href="<?php echo e(route('blogs')); ?>">Blog</a>
                     </li>
                     <li class="nav-item mr-0 <?php echo e(Request::is('contact-us') ? 'active' : ''); ?>">
                         <a class="nav-link" href="<?php echo e(route('contact-us')); ?>">

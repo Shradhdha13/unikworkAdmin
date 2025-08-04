@@ -177,10 +177,9 @@ class PostsController extends Controller
 
 
     /*Display Blogs*/
-    function displayBlog()
+    function blogs()
     {
-        $blog = DB::table('blog')->get();
-
+        $blog = Blog::with('category')->get();
         $pagename = seoPage('Blog page');
 
         $data['page_name'] = isset($pagename['page_name']) && !empty($pagename['page_name']) ? $pagename['page_name'] : 'Sitemap page';
@@ -188,8 +187,6 @@ class PostsController extends Controller
         $data['description'] = isset($pagename['description']) && !empty($pagename['description']) ? $pagename['description'] : 'Unikwork provides quality software development services that allow you to create quality software products that perform.';
         // dd($data);
         $data['key_word'] = isset($pagename['key_word']) && !empty($pagename['key_word']) ? $pagename['key_word'] : 'software development, software development solutions, technology service, software testing, software products';
-
-        // dd($blog);
         return view('blogs', compact('blog', 'data'));
     }
 

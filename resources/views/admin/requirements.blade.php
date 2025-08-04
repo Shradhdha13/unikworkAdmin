@@ -20,7 +20,7 @@
                                         @csrf
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                            <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button>
+                                            {{-- <button class="btn btn-light" id="cancle-btn" type="button">Cancel</button> --}}
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 form-group">

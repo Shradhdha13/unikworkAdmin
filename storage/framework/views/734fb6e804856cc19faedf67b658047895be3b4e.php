@@ -7,6 +7,7 @@
     <meta name="SEO_title" content="<?php echo $__env->yieldContent('SEO_title'); ?>">
     
     <title>Admin | Unikwork</title>
+    
     <link rel="stylesheet" href="<?php echo e(url('public/admin-assets/vendors/feather/feather.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(url('public/admin-assets/vendors/ti-icons/css/themify-icons.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(url('public/admin-assets/css/style.css')); ?>">
@@ -14,7 +15,6 @@
     <link href="<?php echo e(url('public/images/favicon.png')); ?>" rel="icon">
     <link href="<?php echo e(asset('vendor/bootstrap/css/font-awesome.min.css')); ?>" rel="stylesheet">
     
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="<?php echo e(asset('vendor/googlefont.css')); ?>" rel="stylesheet">
@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="<?php echo e(asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')); ?>">
 
   <link rel="stylesheet" href="<?php echo e(asset('plugins/select2/css/select2.min.css')); ?>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker@3.1/daterangepicker.css" />
 
   
 

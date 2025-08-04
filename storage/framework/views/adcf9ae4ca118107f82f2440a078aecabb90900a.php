@@ -9,6 +9,9 @@
 
 
 <!-- container-scroller -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
 <!-- plugins:js -->
 <script src="<?php echo e(asset('admin-assets/vendors/js/vendor.bundle.base.js')); ?>"></script>
@@ -38,6 +41,10 @@
 <script src="<?php echo e(asset('plugins/datatables-buttons/js/buttons.print.min.js')); ?>"></script>
 <script src="<?php echo e(asset('plugins/datatables-buttons/js/buttons.colVis.min.js')); ?>"></script>
 <script src="<?php echo e(asset('plugins/select2/js/select2.full.min.js')); ?>"></script>
+
+<!-- Date Range Picker -->
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker@3.1/daterangepicker.min.js"></script>   
+
 </body>
 
 </html>
@@ -59,4 +66,17 @@
     });
   });
 
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#daterange').daterangepicker({
+            opens: 'left',
+            locale: {
+                format: 'MM/DD/YYYY'
+            }
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        });
+    });
 </script><?php /**PATH C:\xampp\htdocs\unikworkAdmin\resources\views/admin/layouts/footer.blade.php ENDPATH**/ ?>

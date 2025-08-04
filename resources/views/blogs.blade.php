@@ -38,11 +38,12 @@
                 <div class="top-blog-first">
                     <div class="blog-image">
                         {{-- <img src="{{ asset('storage/' {{$item->feature_img}}) }}"> --}}
-                        <a href="{{route('blogdetails',['slug'=>$item->slug])}}"><img src="storage/app/public/blogs/{{$item->feature_img}}" alt="Feature Image"></a>
+                        <a href="{{route('blogs.details',['slug'=>$item->slug])}}"><img src="storage/app/public/blogs/{{$item->feature_img}}" alt="Feature Image" style="width: 100%;height: height: 315px;"></a>
                     </div>
                     <div class="blog-content-main">
                         {{-- <p class="d-inline-block mt-3">{{$item->category_id}}</p> --}}
-                        <h4><a href="{{route('blogdetails',['slug'=>$item->slug])}}">{{$item->title}}</a></h4>
+                        <p style="color: #b9b9b9;text-transform: uppercase;font-size: 0.8rem;" class="mt-3">{{$item->category->name}}</p>
+                        <a href="{{route('blogs.details',['slug'=>$item->slug])}}"><h4>{{$item->title}}</h4></a>
                         {{-- {{$item->slug}} --}}
                     </div>
                 </div>

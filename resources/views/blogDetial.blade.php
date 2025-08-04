@@ -9,7 +9,7 @@
     <section class="banner-sec">
         <div class="container-fluid">
             <div class="container">
-                <h1>Why ReactJS Stands Out: Exploring Its Key Features and Benefits</h1>
+                <h1>Blog Details</h1>
             </div>
         </div>
     </section>
@@ -29,8 +29,8 @@
                     @endif --}}
                     {{-- @forelse ($blogDetail as $item) --}}
                         <h2 class="text-center">{{$blogDetail->title}}</h2>
-                        <h4 class="text-center">{{$blogDetail->slug}}</h4>
-                        <p class="text-center">By {{ \Carbon\Carbon::parse($blogDetail->created_at)->format('M j, Y') }} ({{ \Carbon\Carbon::parse($blogDetail->created_at)->diffForHumans() }}) , in {{$blogDetail->category}}</p>
+                        {{-- <h4 class="text-center">{{$blogDetail->slug}}</h4> --}}
+                        <p class="text-center" style="color: rgb(131, 132, 132);">By {{ \Carbon\Carbon::parse($blogDetail->created_at)->format('M j, Y') }} ({{ \Carbon\Carbon::parse($blogDetail->created_at)->diffForHumans() }}) ,in <span style="color: rgb(255, 131, 88);">{{$blogDetail->category->name}}</span></p>
                         <p class="text-center"><b>Author Name:</b> {{ $blogDetail->users->firstname }}</p>
                         {!! $blogDetail->desc !!}
 {{-- 

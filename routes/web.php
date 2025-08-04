@@ -45,9 +45,8 @@ Route::get('/blog', [PostsController::class, 'index'])->name('blogetc.index');
 Route::get('/search', [PostsController::class, 'search']);
 Route::get('/app-ads.txt', [UnikworkController::class, 'appAds'])->name('app-ads');
 
-Route::get('/displayblog', [PostsController::class, 'displayBlog'])->name('displayBlog');
-Route::get('/blogdetails/{slug}', [PostsController::class, 'blogDetails'])->name('blogdetails');
-
+Route::get('/blogs', [PostsController::class, 'blogs'])->name('blogs');
+Route::get('/blogs/{slug}', [PostsController::class, 'blogDetails'])->name('blogs.details');
 
 
 // Admin Route
@@ -64,6 +63,9 @@ Route::group(['prefix' => 'admin'], function () {
         // requirements
         Route::get('/requirements', [AdminController::class, 'requirements'])->name('requirements');
         Route::post('/requirements', [AdminController::class, 'addRequirements'])->name('add-requirements');
+        Route::post('/career-mark-read', [AdminController::class, 'markAsRead'])->name('mark-as-read');
+
+
         // careers
         Route::get('/view-career', [AdminController::class, 'viewCareer'])->name('view-career');
         Route::delete('/delete-career/{id}', [AdminController::class, 'deleteCareer'])->name('delete-career');
@@ -77,7 +79,10 @@ Route::group(['prefix' => 'admin'], function () {
         // contact
         Route::get('/contact-view', [AdminController::class, 'ContactView'])->name('contact-view');
         Route::delete('/contact-delete/{id}', [AdminController::class, 'contactDelete'])->name('contact-delete');
+        Route::get('/contact-delete', [AdminController::class, 'contactDeletes'])->name('contact_delete');
         Route::get('/update-status', [AdminController::class, 'updateStatus'])->name('update-status');
+        Route::post('/admin/delete-contact', [AdminController::class, 'deleteContacts'])->name('delete-contacts');
+
         // users
         Route::get('/users', [AdminController::class, 'users'])->name('users');
         Route::post('/add-user', [AdminController::class, 'addUser'])->name('add-user');

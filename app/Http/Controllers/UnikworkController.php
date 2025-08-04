@@ -308,6 +308,7 @@ class UnikworkController extends Controller
                 $data->cv = $this->uploadFile($request->cv, 'public/career_images/cv');
             }
             $data->location = $request->location;
+            $data->read = 0;
             $data->save();
 
             return $this->sendSuccess();
@@ -378,7 +379,7 @@ class UnikworkController extends Controller
                         $data['key_word'] = isset($pagename['key_word']) && !empty($pagename['key_word']) ? $pagename['key_word'] : 'software development, career opportunities, technology, innovation​';
                         break;
 
-                        // You can add more cases for other technologies as needed
+                    // You can add more cases for other technologies as needed
                     default:
                         $data['title'] = 'Career Opportunities | Unikwork Systems';
                         $data['description'] = 'Explore career opportunities in software development across various technologies.';

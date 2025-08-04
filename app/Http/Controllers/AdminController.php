@@ -256,24 +256,101 @@ class AdminController extends Controller
         return redirect('admin/view-career')->with('msg', 1);
     }
 
-    public function ContactView(Request $request)
-    {
-        try {
-            $pagename = 'Contact';
-            if ($request->ajax()) {
-                $contactView = $this->contactus::latest()->paginate(100);
-                $data['status'] = 1;
-                $data['data'] = View::make('admin.contact.data', compact('contactView'))->render();
-                return response()->json($data);
-            }
-        } catch (Exception $e) {
-            abort(500);
-        }
-        $contactView = $this->contactus::latest()->paginate(100);
-        return view('admin/contact/contact-view', compact('contactView', 'pagename'));
-    }
+    // public function ContactView(Request $request)
+    // {
+    //     try {
+    //         $pagename = 'Contact';
+    //         if ($request->ajax()) {
+    //             $contactView = $this->contactus::latest()->paginate(100);
+    //             $data['status'] = 1;
+    //             $data['data'] = View::make('admin.contact.data', compact('contactView'))->render();
+    //             return response()->json($data);
+    //         }
+    //     } catch (Exception $e) {
+    //         abort(500);
+    //     }
+    //     $contactView = $this->contactus::latest()->paginate(100);
+    //     return view('admin/contact/contact-view', compact('contactView', 'pagename'));
+    // }
 
-    public function CareerView(Request $request)
+//    public function ContactView(Request $request)
+//     {
+//         try {
+//             $pagename = 'Contact';
+//             $query = $this->contactus::query();
+
+//             if ($request->has('date') && !empty($request->date)) {
+//                 [$startDate, $endDate] = explode(' - ', $request->date);
+
+//                 $startDate = \Carbon\Carbon::parse($startDate)->startOfDay();
+//                 $endDate = \Carbon\Carbon::parse($endDate)->endOfDay();
+
+//                 $query->whereBetween('created_at', [$startDate, $endDate]);
+//             }
+
+//             $contactView = $query->latest()->paginate(5);
+
+//             if ($request->ajax()) {
+//                 return response()->json([
+//                     'data' => view('admin.contact.data', compact('contactView'))->render()
+//                 ]);
+//             }
+
+//             return view('admin.contact.contact-view', compact('contactView', 'pagename'));
+
+//         } catch (\Exception $e) {
+//             return response()->json(['error' => $e->getMessage()], 500);
+//         }
+//     }
+
+public function ContactView(Request $request)
+{
+    try {
+        $pagename = 'Contact';
+
+       $query = $this->contactus::query();// Use correct model
+
+         // Filter by name
+           if ($request->has('search') && !empty($request->search)) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('firstname', 'like', "%{$search}%")
+                  ->orWhere('lastname', 'like', "%{$search}%")
+                  ->orWhere('phone', 'like', "%{$search}%");
+            });
+        }
+
+        // If user provides a date range filter
+        if ($request->has('date') && !empty($request->date)) {
+            [$startDate, $endDate] = explode(' - ', $request->date);
+
+            $startDate = Carbon::parse($startDate)->startOfDay();
+            $endDate = Carbon::parse($endDate)->endOfDay();
+
+            $query->whereBetween('created_at', [$startDate, $endDate]);
+        } else {
+            // Default: show today's records
+            $query->whereDate('created_at', Carbon::today());
+        }
+
+        $contactView = $query->orderBy('created_at', 'desc')->paginate(5);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'data' => view('admin.contact.data', compact('contactView'))->render()
+            ]);
+        }
+
+        return view('admin.contact.contact-view', compact('contactView', 'pagename'));
+
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
+}
+
+
+
+   public function CareerView(Request $request)
     {
         try {
             $pagename = 'Resume';
@@ -326,6 +403,7 @@ class AdminController extends Controller
         }
     }
 
+
     public function contactDelete($id)
     {
         // $this->contactus::find($id)->delete();
@@ -339,6 +417,35 @@ class AdminController extends Controller
         } catch (Exception $e) {
             abort(500);
         }
+    }
+
+     public function deletecontacts(Request $request)
+    {
+        $ids = $request->input('ids');
+
+        if (is_array($ids) && count($ids) > 0) {
+            try {
+                $this->contactus::whereIn('id', $ids)->delete();
+                return response()->json(['success' => true]);
+            } catch (\Exception $e) {
+                dd($e);
+                return response()->json(['success' => false, 'message' => 'Failed to delete records.']);
+            }
+        }
+
+        return response()->json(['success' => false, 'message' => 'No records to delete.']);
+    }
+
+      public function contactDeletes(Request $request)
+    {
+        // dd($request->id);
+        $contactus = $this->contactus::find($request->id);
+        if (!is_null($contactus)) {
+           
+            $contactus->delete();
+        }
+        return redirect('admin/contact-view');
+        // return;
     }
 
     public function careerDelete(Request $request)
@@ -616,11 +723,12 @@ class AdminController extends Controller
 
             $Blogs->feature_img = $filename;
         }
-        // dd($Blogs);
         $Blogs->save();
+        // dd($Blogs);
 
 
-        return view('admin.blogs.index')->with('msg', 1);
+        // return view('admin.blogs.index')->with('msg', 1);
+        return redirect()->route('bloglist')->with('msg', 'Blog Added successfully!');
     }
 
     public function editblog($id)
@@ -726,7 +834,6 @@ class AdminController extends Controller
 
     public function medataDesc()
     {
-        dd("dgfdf");
         $meta = [
             'title' => 'Home Page Title',
             'description' => 'This is the home page description.'
@@ -746,5 +853,26 @@ class AdminController extends Controller
         $addCommment->comment = $request->comment;
         $addCommment->save();
         return redirect()->back();
+    }
+
+    public function markAsRead(Request $request)
+    {
+        // dd($request->all());
+        // $career = Careers::find($id);
+        // if ($career) {
+        //     $career->read = 1;
+        //     $career->save();
+        //     return response()->json(['success' => true]);
+        // }
+        // return response()->json(['success' => false], 404);
+        {
+            $career = Careers::find($request->id);
+            if ($career) {
+                $career->read = 1;
+                $career->save();
+                return response()->json(['success' => true]);
+            }
+            return response()->json(['success' => false], 404);
+        }
     }
 }

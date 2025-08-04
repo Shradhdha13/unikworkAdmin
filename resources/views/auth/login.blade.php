@@ -47,7 +47,16 @@
         box-shadow: none; /* Remove focus shadow */
         outline: none; /* Remove focus outline */
     }
+.btn-primary{
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
 
+.invalid-feedback {
+    display: block;
+    color: #dc3545;  /* Red color for error messages */
+    font-size: 0.875em;
+}
 
 </style>
 @section('content')
@@ -59,7 +68,7 @@
     </div>
     <div class="grid-item">
         <div class="container d-flex justify-content-center align-items-center" style="height: 80vh;">
-            <div style="width: 550px">
+            <div class="justify-content-center" style="width: 550px">
                 <div class="pb-5 col-sm-12"><img src="../images/unikwork-logo3x.png" height="35px" class="login-logo"></div>
                 <div class="text-left pb-4">
                     <h1 class="login-h1">Sign in</h1>
@@ -70,23 +79,23 @@
 
                     <div class="form-group mb-4 text-left">
                         <label for="email">{{ __('Email Address') }}</label>
-                        {{-- <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> --}}
-
+                    
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" style="background: none; border-right:none;">
-                                    <img src="{{asset('images/envlop.svg')}}" alt="Email Icon" style="width: 20px; height: 20px;">
+                                    <img src="{{ asset('images/envlop.svg') }}" alt="Email Icon" style="width: 20px; height: 20px;">
                                 </span>
                             </div>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         </div>
                     
                         @error('email')
-                            <span class="invalid-feedback" role="alert">
+                            <div class="invalid-feedback d-block" role="alert">
                                 <strong>{{ $message }}</strong>
-                            </span>
+                            </div>
                         @enderror
                     </div>
+                    
                     
                     <div class="form-group mb-4 text-left">
                         <label for="password">{{ __('Password') }}</label>
@@ -100,7 +109,7 @@
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                             <div class="input-group-prepend" onclick="togglePassword()">
                                 <span class="input-group-text" style="background: none; border-left:none; cursor: pointer">
-                                    <img src="{{asset('images/eyeclose.svg')}}" alt="Password Icon" style="width: 20px; height: 20px;">
+                                    <img id="toggle-icon" src="{{asset('images/eyeclose.svg')}}" alt="Password Icon" style="width: 20px; height: 20px;">
                                 </span>
                             </div>
                         </div>

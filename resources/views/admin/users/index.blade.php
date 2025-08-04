@@ -21,7 +21,7 @@
                         {{-- <input type="search" class="form-control" name="search" placeholder="search" id="livesearch" /> --}}
                         </div>
                         <div class="col-4 right-side">
-                        <select id="mySelectuser" class="form-group filter-main form-control" data-placeholder="Search User..." onchange="rolesearch(this.value)">
+                        <select id="mySelectuser" class="form-group filter-main form-control" data-placeholder="Search User" onchange="rolesearch(this.value)">
                             {{-- <option value="" selected>Choose Experience</option> --}}
                             {{-- <option value="">Show All</option>
                             <option value="1">Admin</option>
@@ -260,8 +260,8 @@
     });
 
     function rolesearch(expValue) {
-        role = expValue; 
-        qstring = '&role=' + role 
+        // role = expValue; 
+        // qstring = '&role=' + role 
         getUsersData(qstring);
     }
     </script>
