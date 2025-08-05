@@ -4,6 +4,15 @@
         $('.page-preloader').addClass('closed');
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdown = document.querySelector('.navbar-nav .dropdown');                
+        if (dropdown) {
+            if (window.innerWidth < 768) {
+                dropdown.classList.remove('position-static');
+            }            
+        }        
+    });
+
     $(document).ready(function () {
         $('.testimonial-slide').slick({
             dots: false,
@@ -202,11 +211,45 @@
         if (scroll >= 100) sticky.addClass('sticky');
         else sticky.removeClass('sticky');
     });
-    $('.dropdown').hover(function () {
-        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(100);
-    }, function () {
-        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(100);
+    
+    function handleDropdownBehavior() {
+        if ($(window).width() >= 768) {
+            // Enable hover for desktop
+            $('.dropdown').hover(
+                function () {
+                    $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(200);
+                },
+                function () {
+                    $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(200);
+                }
+            );
+        } else {
+            // Remove hover event for mobile
+            $('.dropdown').off('mouseenter mouseleave');
+
+            // Optional: Toggle dropdown on click manually (if Bootstrap JS isn't working)
+            $('.dropdown-toggle').off('click').on('click', function (e) {
+                e.preventDefault();
+                const $parent = $(this).parent();
+                const $menu = $parent.find('.dropdown-menu');
+
+                // Close all other open dropdowns
+                $('.dropdown-menu').not($menu).slideUp(200);
+                $('.dropdown').not($parent).removeClass('show');
+
+                // Toggle current dropdown
+                $menu.stop(true, true).slideToggle(200);
+                $parent.toggleClass('show');
+            });
+        }
+    }
+    // Run on load
+    handleDropdownBehavior();
+    // Re-run on resize
+    $(window).resize(function () {
+        handleDropdownBehavior();
     });
+
     $("#tech-title .nav-tabs a").click(function () {
         var position = $(this).parent().position();
         $("#tech-title .slider").css({"left": +position.left});
