@@ -25,6 +25,8 @@ Route::get('/ui-ux', [UnikworkController::class, 'uiux'])->name('ui-ux');
 Route::get('/internet-of-things', [UnikworkController::class, 'iot'])->name('internet-of-things');
 Route::get('/development-operations', [UnikworkController::class, 'devops'])->name('development-operations');
 Route::get('/quality-assurance', [UnikworkController::class, 'qa'])->name('quality-assurance');
+Route::get('/ai-services', [UnikworkController::class, 'aiServices'])->name('ai-services');
+Route::get('/data-engineering', [UnikworkController::class, 'dataEngineering'])->name('data-engineering');
 Route::get('/case-studies', [UnikworkController::class, 'casestudy'])->name('case-studies');
 Route::get('/contact-us', [UnikworkController::class, 'contact'])->name('contact-us');
 Route::post('/contact-us', [UnikworkController::class, 'addcontact'])->name('add-contact');
