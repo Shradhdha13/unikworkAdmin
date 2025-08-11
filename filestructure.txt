@@ -5188,10 +5188,7 @@
         |-- .gitignore
         |-- sessions
             |-- .gitignore
-            |-- 0aPb2QgxbTtBrZkMak3cb9DKZqNIYZYjLc1xe6L8
-            |-- GEl2wR2zbWw9NIym6R2YY9bt4HS40CwtiK92lLAn
-            |-- KNYRFT1xZ6sLOuvVTbWAguN9y1ZVI9YYlxJbgcZR
-            |-- vNYAiQc9tVaahu3Rky6Fi6ZXhvNHWE2TH3eY2444
+            |-- dvrmeHrcBSOPNESvyJK4R9FRg7sEFSs7My3Bwgeb
         |-- testing
             |-- .gitignore
         |-- views

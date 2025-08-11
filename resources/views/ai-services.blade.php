@@ -94,8 +94,7 @@
         {{-- AI Consulting --}}
         <section class="web-portals">
             <div class="container cross-sec">
-                <h2 class="section-title wow fadeInUp">We offer a wide range of services for AI development to upgrade your company</h2>
-                <a href="{{ route('contact-us') }}" class="btn button-primary">Know more about our AI services</a>
+                <h2 class="section-title wow fadeInUp">We offer a wide range of services for AI development to upgrade your company</h2>                
                 <div class="row align-items-center">
                     <div class="col col-md-6 wow fadeInUp cross-alter-content">
                         <svg xmlns="http://www.w3.org/2000/svg" width="74.929" height="66" viewBox="0 0 74.929 66" class="illustration-sec-icon">
@@ -293,17 +292,19 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center mt-5">
+                <a href="{{ route('contact-us') }}" class="btn button-primary">Know more about our AI services</a>
+            </div>
         </section>
 
          {{-- ai empower --}}
-        <section class="our-vision section-space">
+        <section class="our-vision section-space pb-5">
             <div class="container-fluid">
                 <div class="container">
                     <h2>Latest and modern technology stack to empower our AI solutions</h2>
                     <p>
                         We employ the latest and advanced technologies to develop and deploy our top-notch AI solutions 
-                    </p>
-                    <a href="{{ route('contact-us') }}" class="btn button-primary">Contact us to learn more about current technologies</a>
+                    </p>                    
                     <div class="row d-block d-md-flex">
                        <div class="icon-points">
                             <p style="justify-self: left;" class="text-nowrap">Data Lakes- Databricks, Snowflake Redshift, Azure Data Lake</p>
@@ -317,6 +318,7 @@
                             <p style="justify-self: left;" class="text-nowrap">RAG - Unstructured, Llama Index, LangChain, Airbyte</p>
                         </div>
                     </div>
+                    <a href="{{ route('contact-us') }}" class="btn button-primary mt-5">Contact us to learn more about current technologies</a>
                 </div>
             </div>
         </section>
@@ -545,16 +547,14 @@
 
         <section class="web-portals">
             <div class="container cross-sec">
-                <h2 class="section-title wow fadeInUp">FAQs</h2>                
+                <h2 class="section-title wow fadeInUp">FAQs</h2>
                 <div class="row align-items-center">                   
                     <div id="accordion" class="col-12">
                         <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <h5 class="mb-0">
-                                    <a class="btn btn-link mt-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What kind of AI solutions can you develop for my firm/business?
-                                    </a>
-                                </h5>
+                            <div class="card-header" id="headingOne">                                
+                                <a class="btn btn-link mt-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What kind of AI solutions can you develop for my firm/business?
+                                </a>                                
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
@@ -570,12 +570,10 @@
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
+                            <div class="card-header" id="headingTwo">                            
                                 <a class="btn btn-link collapsed mt-0" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     Time duration for developing a custom AI solution?
-                                </a>
-                            </h5>
+                                </a>                            
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                 <div class="card-body">
@@ -584,12 +582,10 @@
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-header" id="headingThree">
-                            <h5 class="mb-0">
+                            <div class="card-header" id="headingThree">                            
                                 <a class="btn btn-link collapsed mt-0" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     What is the cost of building an AI solution ?
-                                </a>
-                            </h5>
+                                </a>                            
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                             <div class="card-body">
@@ -598,12 +594,10 @@
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-header" id="headingFour">
-                            <h5 class="mb-0">
+                            <div class="card-header" id="headingFour">                            
                                 <a class="btn btn-link collapsed mt-0" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     How do you evaluate the performance, accuracy and quality of the AI solution ?
-                                </a>
-                            </h5>
+                                </a>                            
                             </div>
                             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                                 <div class="card-body">
@@ -613,12 +607,10 @@
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-header" id="headingFive">
-                            <h5 class="mb-0">
+                            <div class="card-header" id="headingFive">                            
                                 <a class="btn btn-link collapsed mt-0" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                     Can you integrate AI to my existing platform, mobile/web apps, software or ERP system? 
-                                </a>
-                            </h5>
+                                </a>                            
                             </div>
                             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                                 <div class="card-body">
