@@ -2496,6 +2496,10 @@
         |-- quick.png
         |-- service
             |-- ai_service
+                |-- ai-chatboat.svg
+                |-- ai-consulting.svg
+                |-- ai-in-mobile.svg
+                |-- ai-in-software.svg
                 |-- ai_chatboat.jpg
                 |-- ai_consulting.jpg
                 |-- ai_in_mobile.jpg
@@ -2503,6 +2507,9 @@
                 |-- ai_nlp.jpg
                 |-- ai_rag.jpg
                 |-- ai_service.jpg
+                |-- nlp.svg
+                |-- rag-solution.svg
+                |-- service-7.svg
             |-- api-test.png
             |-- appdevlopment.png
             |-- arrow-next.svg
@@ -2510,12 +2517,19 @@
             |-- custom-web-dev.png
             |-- data_engineering
                 |-- data-analytics.jpg
+                |-- data-analytics.svg
                 |-- data-consulting.jpg
                 |-- data-engineering.jpg
+                |-- data-engineering.svg
                 |-- data-etl.jpg
+                |-- data-etl.svg
                 |-- data-governance.jpg
+                |-- data-governance.svg
                 |-- data-quality.jpg
-                |-- data-wharehouse.jpg
+                |-- data-quality.svg
+                |-- data-warehouse.jpg
+                |-- data-warehouse.svg
+                |-- service-8.svg
             |-- dev-opration.png
             |-- dev-ops.png
             |-- e-commerce.png
@@ -5188,52 +5202,20 @@
         |-- .gitignore
         |-- sessions
             |-- .gitignore
-            |-- dvrmeHrcBSOPNESvyJK4R9FRg7sEFSs7My3Bwgeb
+            |-- Tc1Z0ki7AlF47h2Arjp1LikFSZVGjmYsWcZ1aUhD
         |-- testing
             |-- .gitignore
         |-- views
             |-- .gitignore
-            |-- 0621102a9cb9596c8f05c04315730d82269a0a81.php
             |-- 0bc59f12b10bba8f655f6576fe5e741f377c8af5.php
-            |-- 0fc62510d9d5100beaf84345f8d95fa4843c9e09.php
-            |-- 112200ad1805b0acdf786dde383596e108fd790c.php
-            |-- 14de8c6fac4dd440219b55f30d16a6ba4c165355.php
-            |-- 155341f2b0dcb5c30985fb0d50506071763ad98b.php
-            |-- 169305da1a2bc59fc1ccf5f65bb26adc7bc8dc19.php
             |-- 1f4c64022bdc5d570f929a2741b7093f0a19c8cc.php
-            |-- 28d41776bf20c510f65ed75bf94bf4fa84265600.php
             |-- 297fe743b9a7ab42cce88318779a9c0d3d9ddbc3.php
-            |-- 30ba0c75b4680381111c6687bf6e5a3bcf92fa0b.php
-            |-- 32768967722cdfa577cf86eb06cc793a851370bd.php
-            |-- 35afdfda0945ad6f74512986d2bea669c3e5a4cd.php
-            |-- 438913049e2c58b5aab40d18fd3aa8eb515b7ef6.php
-            |-- 44595b98564bfbebc098ff581d4d0d0e97b4d132.php
             |-- 47e505535b0cd470733d9f34abb7a552748b6122.php
-            |-- 4da6eb609d263244141ed7f4f993a2bc58bcf372.php
-            |-- 4fd10606745f92f4ec07aaabf818c5412626ac46.php
-            |-- 5036cf38de4747334729c55761bf70e989524cec.php
-            |-- 614178dbe75a8fbec2e7a8b5ea7335856bd44dbc.php
-            |-- 67da86af1e6d884f5fee2ef2045bf2250c8d37bf.php
-            |-- 68d35bfca494e4f2ee2a1d69e445a3804db510c6.php
             |-- 6aac46a8d3b153485d0a9978326e8a4512e29374.php
-            |-- 6c8645ee38f2eba95b7bc37e8bea74a80f483390.php
-            |-- 6d2c04ff1edf028c9c3acdc3ae93a8e30243f4ac.php
-            |-- 6f7268bb24c00a03f2f308ed8b30b040966d62da.php
-            |-- 734fb6e804856cc19faedf67b658047895be3b4e.php
-            |-- 7ef1055aefd727aceb862a75a7853494ffef5eb6.php
             |-- 8326336990d6b2c53a2d6c08dad9339828b354cb.php
-            |-- 8d705da9b71cb2abfc29a57b5e63aab4c88d57b6.php
-            |-- 8d766a9a0ff4bafa91315293043e45c26334e816.php
-            |-- a115fb002268f17872044f9cb5a019f90ab53b77.php
             |-- a7f70f8c29867140b17899f5fdbad0accf38e9ab.php
-            |-- adcf9ae4ca118107f82f2440a078aecabb90900a.php
             |-- b69b1e6de24778201c22cffa4ba6ec99a4235e11.php
             |-- b9d89d3e151db6d3875eae1dc082cff3b4edfd7f.php
-            |-- d20438365b0ed39dc3b7c260532ac0d43011da28.php
-            |-- d497cd2cf712fe7ad1e7df6e93018e0bc693d11b.php
-            |-- e4ab1057263f809dff1450eae65fee75aa3310e5.php
-            |-- e933820d9c761458523d9ab415eff856eceb8d37.php
-            |-- f2e20029f2a13e2ec246f3f2dc279dd308f0c0cb.php
 |-- unikwork (2).sql
 |-- vendor
     |-- asm89
