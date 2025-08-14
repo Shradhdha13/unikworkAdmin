@@ -1754,6 +1754,10 @@ ul>li:last-child:after {
     border-radius: 10%
 }
 
+.icon-main-img .new-service {
+    border-radius: 8% !important;
+}
+
 .technolopgies-img {
     margin-bottom: 10px
 }
@@ -4127,5 +4131,96 @@ input[type=search]::-webkit-search-cancel-button {
     h4 {
         font-size: 16px;
         line-height: 24px
+    }
+}
+
+/* AI Table Styling */
+.ai-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.ai-table td {    
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eaeaea;
+    vertical-align: middle;
+}
+
+.ai-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.ai-table tr:hover {
+    background-color: #f1f8ff;
+    transition: background-color 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .ai-table {
+        font-size: 14px;
+    }
+
+    .ai-table td {
+        padding: 12px 10px;
+    }
+}
+
+.source {
+    font-size: 14px;
+    color: #f57f50 !important;
+}
+
+#accordion .card-header:has(a[aria-expanded="true"]) {
+    background-color: #f57f50;
+    color: #fff;
+}
+
+/* New centered skills layout inside .our-vision */
+.our-vision .icon-points-centered {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 60px; /* row gap / column gap */
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* left-align inside each column */
+}
+
+/* Override .our-vision p padding for this block only */
+.our-vision .icon-points-centered p {
+    padding: 0 0 0 30px; /* remove 80px side padding, keep left padding for bullet */
+    margin-bottom: 10px;
+    position: relative;
+    flex: 0 0 calc(50% - 60px); /* two columns */
+    white-space: normal;
+}
+
+/* Keep the coral dash */
+.our-vision .icon-points-centered p:before {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 13px;
+    background: coral;
+    top: 11px;
+    left: 0;
+    border-radius: 2px;
+}
+
+/* Mobile: make it one column */
+@media (max-width: 768px) {
+    .our-vision .icon-points-centered p {
+        flex: 0 0 100%;
     }
 }

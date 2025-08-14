@@ -118,7 +118,6 @@
         |-- 201912211440_10000_mine.mp4
         |-- 201912211440_10001_mine.mp4
         |-- 201912211441_10001_mine.mp4
-|-- package-lock.json
 |-- package.json
 |-- public
     |-- .htaccess
@@ -2496,11 +2495,41 @@
         |-- quick-detail.png
         |-- quick.png
         |-- service
+            |-- ai_service
+                |-- ai-chatboat.svg
+                |-- ai-consulting.svg
+                |-- ai-in-mobile.svg
+                |-- ai-in-software.svg
+                |-- ai_chatboat.jpg
+                |-- ai_consulting.jpg
+                |-- ai_in_mobile.jpg
+                |-- ai_in_software.jpg
+                |-- ai_nlp.jpg
+                |-- ai_rag.jpg
+                |-- ai_service.jpg
+                |-- nlp.svg
+                |-- rag-solution.svg
+                |-- service-7.svg
             |-- api-test.png
             |-- appdevlopment.png
             |-- arrow-next.svg
             |-- arrow-prev.svg
             |-- custom-web-dev.png
+            |-- data_engineering
+                |-- data-analytics.jpg
+                |-- data-analytics.svg
+                |-- data-consulting.jpg
+                |-- data-engineering.jpg
+                |-- data-engineering.svg
+                |-- data-etl.jpg
+                |-- data-etl.svg
+                |-- data-governance.jpg
+                |-- data-governance.svg
+                |-- data-quality.jpg
+                |-- data-quality.svg
+                |-- data-warehouse.jpg
+                |-- data-warehouse.svg
+                |-- service-8.svg
             |-- dev-opration.png
             |-- dev-ops.png
             |-- e-commerce.png
@@ -5031,6 +5060,7 @@
             |-- users
                 |-- data.blade.php
                 |-- index.blade.php
+        |-- ai-services.blade.php
         |-- app-development.blade.php
         |-- auth
             |-- login.blade.php
@@ -5047,6 +5077,7 @@
         |-- careers.blade.php
         |-- case-studies.blade.php
         |-- contact-us.blade.php
+        |-- data-engineering.blade.php
         |-- dev-ops.blade.php
         |-- errors
             |-- 404.blade.php
@@ -5171,62 +5202,20 @@
         |-- .gitignore
         |-- sessions
             |-- .gitignore
-            |-- MmCgCOHq1IjpNgKOVv0qhnaS7i76YAyJkun30AkP
-            |-- sJjdZXHA7fSpNrA8FmiAVyvXBSO7JgnvFDhqFB2Z
+            |-- Tc1Z0ki7AlF47h2Arjp1LikFSZVGjmYsWcZ1aUhD
         |-- testing
             |-- .gitignore
         |-- views
             |-- .gitignore
-            |-- 0621102a9cb9596c8f05c04315730d82269a0a81.php
             |-- 0bc59f12b10bba8f655f6576fe5e741f377c8af5.php
-            |-- 0fc62510d9d5100beaf84345f8d95fa4843c9e09.php
-            |-- 112200ad1805b0acdf786dde383596e108fd790c.php
-            |-- 11c18af7f652c1c6fadd72f38b95c4f78160856d.php
-            |-- 1252fdd4af34e4fdb4bafbba89cab324613f4a89.php
-            |-- 14de8c6fac4dd440219b55f30d16a6ba4c165355.php
-            |-- 155341f2b0dcb5c30985fb0d50506071763ad98b.php
             |-- 1f4c64022bdc5d570f929a2741b7093f0a19c8cc.php
-            |-- 28d41776bf20c510f65ed75bf94bf4fa84265600.php
             |-- 297fe743b9a7ab42cce88318779a9c0d3d9ddbc3.php
-            |-- 30ba0c75b4680381111c6687bf6e5a3bcf92fa0b.php
-            |-- 35afdfda0945ad6f74512986d2bea669c3e5a4cd.php
-            |-- 44595b98564bfbebc098ff581d4d0d0e97b4d132.php
             |-- 47e505535b0cd470733d9f34abb7a552748b6122.php
-            |-- 4e5d471b7425c08aa0aa3d69ca439555c6585357.php
-            |-- 4fd10606745f92f4ec07aaabf818c5412626ac46.php
-            |-- 5036cf38de4747334729c55761bf70e989524cec.php
-            |-- 5eda63f5f042adafe0441ba1cabddca45c70c209.php
-            |-- 614178dbe75a8fbec2e7a8b5ea7335856bd44dbc.php
-            |-- 644f40817b2fe70f3c66507132a1e37f271f55a3.php
-            |-- 67da86af1e6d884f5fee2ef2045bf2250c8d37bf.php
-            |-- 68d35bfca494e4f2ee2a1d69e445a3804db510c6.php
             |-- 6aac46a8d3b153485d0a9978326e8a4512e29374.php
-            |-- 6c8645ee38f2eba95b7bc37e8bea74a80f483390.php
-            |-- 6d2c04ff1edf028c9c3acdc3ae93a8e30243f4ac.php
-            |-- 6f7268bb24c00a03f2f308ed8b30b040966d62da.php
-            |-- 734fb6e804856cc19faedf67b658047895be3b4e.php
-            |-- 7ef1055aefd727aceb862a75a7853494ffef5eb6.php
-            |-- 82ec2af6b2efbceb84a3e5ff4a43d9ef18741225.php
             |-- 8326336990d6b2c53a2d6c08dad9339828b354cb.php
-            |-- 88c1a86fd8db1d1c4adf09ba569124f7f38bc8ae.php
-            |-- 8d766a9a0ff4bafa91315293043e45c26334e816.php
-            |-- 947f8fbe527d05e1e593cbfe24352565dc8328cf.php
-            |-- 950880f1a261a8f81dd0288757334068d82a1e8d.php
-            |-- a115fb002268f17872044f9cb5a019f90ab53b77.php
-            |-- a825ec48140d1c5ad75d2518ed8235e56ca5fb97.php
-            |-- adcf9ae4ca118107f82f2440a078aecabb90900a.php
+            |-- a7f70f8c29867140b17899f5fdbad0accf38e9ab.php
+            |-- b69b1e6de24778201c22cffa4ba6ec99a4235e11.php
             |-- b9d89d3e151db6d3875eae1dc082cff3b4edfd7f.php
-            |-- bb9649bedaa72087fd20b3ff14fdc6c3b4ed35a2.php
-            |-- bc34d6a23b2a9edae8e4fee690f2f1e220d58f15.php
-            |-- d20438365b0ed39dc3b7c260532ac0d43011da28.php
-            |-- d497cd2cf712fe7ad1e7df6e93018e0bc693d11b.php
-            |-- d51203d7fea6c40867c2317f59b631f4b9ceeda8.php
-            |-- e4ab1057263f809dff1450eae65fee75aa3310e5.php
-            |-- e6627ed14eb4facb3ebc6c67ea3502abb1ad6434.php
-            |-- e6f9059bebb0167447beace44116ceffe65f0ba5.php
-            |-- e933820d9c761458523d9ab415eff856eceb8d37.php
-            |-- f2e20029f2a13e2ec246f3f2dc279dd308f0c0cb.php
-            |-- fec1bb643040d6413c4816202838df22dd10e352.php
 |-- unikwork (2).sql
 |-- vendor
     |-- asm89
@@ -14695,4 +14684,17 @@
                 |-- InvalidArgumentException.php
                 |-- Mixin.php
     |-- _laravel_ide
+        |-- discover-1e7ea3cf42a2f9b84f3de09530e2c135.php
+        |-- discover-31b934f114eabc246b541addb8b458e3.php
+        |-- discover-320fe5c5b7f0175eae37c44f264ceb08.php
+        |-- discover-476fe65492650d7ce55de1f8f96024c5.php
+        |-- discover-5802e590a92e23606bb54d2909564178.php
+        |-- discover-67043687ec5f16a5c4357b3dc049d2d5.php
+        |-- discover-7563160ca998bde672640aa1e68dfd08.php
+        |-- discover-77e9e6a2445455b87d4f4cd834e4e23d.php
+        |-- discover-79de9752f999b6e261cd05abba67a5ce.php
+        |-- discover-9abd86d674d0ba851f4ac7b31349196a.php
+        |-- discover-d769f81c5eaf96f1f253a56481405376.php
+        |-- discover-e691d398bdcb7c046a57f3e4553bb28a.php
+        |-- discover-ea280fb1636eb761c4fd23f76666e397.php
         |-- _model_helpers.php

@@ -24,12 +24,14 @@
                         <a href="{{ route('services') }}" class="nav-link dropdown-toggle dropdown-text d-md-none" data-toggle="dropdown">Services</a>
                         <a href="{{ route('services') }}" class="nav-link dropdown-toggle dropdown-link" >Services</a>
                         <div class="dropdown-menu">
+                            <a class="dropdown-item {{ Request::is('ai-services') ? 'active' : ''}}" href="{{ route('ai-services') }}">AI Services</a>
                             <a class="dropdown-item {{ Request::is('app-development') ? 'active' : ''}}" href="{{ route('app-development') }}">Mobile App Development</a>
                             <a class="dropdown-item {{ Request::is('web-development') ? 'active' : ''}}" href="{{ route('web-development') }}">Web Development</a>
                             <a class="dropdown-item {{ Request::is('ui-ux') ? 'active' : ''}}" href="{{ route('ui-ux') }}">UI/UX Service</a>
                             <a class="dropdown-item {{ Request::is('internet-of-things') ? 'active' : ''}}" href="{{ route('internet-of-things') }}">Internet Of Things</a>
                             <a class="dropdown-item {{ Request::is('development-operations') ? 'active' : ''}}" href="{{ route('development-operations') }}">DevOps</a>
                             <a class="dropdown-item {{ Request::is('quality-assurance') ? 'active' : ''}}" href="{{ route('quality-assurance') }}">Quality Assurance</a>
+                            <a class="dropdown-item {{ Request::is('data-engineering') ? 'active' : ''}}" href="{{ route('data-engineering') }}">Data Engineering and Analytics</a>
                         </div>
                     </li>
                     <li class="nav-item {{ Request::is('case-studies') || Request::is('case-studies/kooberi') || Request::is('case-studies/carblip') || Request::is('case-studies/quick') ? 'active' : '' }}">

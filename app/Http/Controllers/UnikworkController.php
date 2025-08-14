@@ -178,6 +178,34 @@ class UnikworkController extends Controller
     /**
      * @return Application|Factory|View
      */
+    public function aiServices()
+    {
+        $pagename = seoPage('AI Services');
+        $data['page_name'] = isset($pagename['page_name']) && !empty($pagename['page_name']) ? $pagename['page_name'] : 'AI Services page';
+        $data['title'] = isset($pagename['title']) && !empty($pagename['title']) ? $pagename['title'] : 'AI Services | Unikwork Systems';
+        $data['description'] = isset($pagename['description']) && !empty($pagename['description']) ? $pagename['description'] : '';
+        $data['key_word'] = isset($pagename['key_word']) && !empty($pagename['key_word']) ? $pagename['key_word'] : 'AI Services, artificial intelligence, machine learning, AI development, AI solutions, AI consulting';
+
+        return view('ai-services', compact('data'));
+    }
+
+    /**
+     * @return Application|Factory|View
+     */
+    public function dataEngineering()
+    {
+        $pagename = seoPage('Data Engineering and Analytics');
+        $data['page_name'] = isset($pagename['page_name']) && !empty($pagename['page_name']) ? $pagename['page_name'] : 'Data Engineering page';
+        $data['title'] = isset($pagename['title']) && !empty($pagename['title']) ? $pagename['title'] : 'Data Engineering and Analytics | Unikwork Systems';
+        $data['description'] = isset($pagename['description']) && !empty($pagename['description']) ? $pagename['description'] : '';
+        $data['key_word'] = isset($pagename['key_word']) && !empty($pagename['key_word']) ? $pagename['key_word'] : 'Data Engineering, data analytics, data processing, data management, data solutions';
+
+        return view('data-engineering', compact('data'));
+    }
+
+    /**
+     * @return Application|Factory|View
+     */
     public function casestudy()
     {
         // $data['title'] = 'Unikwork Case Studies: Showcasing Success in Tech Projects';

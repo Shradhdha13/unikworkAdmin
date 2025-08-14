@@ -80,6 +80,19 @@
                 <h2 class="section-title wow fadeInUp">Discover Our Services</h2>
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 services-card">
+                        <a href="{{ route('ai-services') }}" class="d-block">
+                            <div class="services-img">
+                                <img src="{{ asset('images/service/ai_service/service-7.svg')}}" width="100px" height="100px" alt="unikwork">
+                            </div>
+                            <div class="services-content">
+                                <b>AI Services</b>
+                                <p>We leverage the power of artificial intelligence to deliver innovative solutions that drive business growth, optimize efficiency, and unlock new opportunities for innovation.</p>
+                                <span>Learn More</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 services-card">
                         <a href="{{ route('app-development') }}" class="d-block">
                             <div class="services-img">
                                 <img src="{{ asset('images/service-1.svg')}}" widht="100px" height="100px" alt="unikwork">
@@ -152,6 +165,19 @@
                             <div class="services-content">
                                 <b>Quality Assurance</b>
                                 <p>We evaluate your apps and software to ensure they align with quality standards at all stages of development by subjecting them to dozens of proven quality tests so they can operate at peak performance.</p>
+                                <span>Learn More</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 services-card">
+                        <a href="{{ route('data-engineering') }}" class="d-block">
+                            <div class="services-img">
+                                <img src="{{ asset('images/service/data_engineering/service-8.svg')}}" class="w-auto" width="100px" height="100px" alt="unikwork">
+                            </div>
+                            <div class="services-content">
+                                <b>Data Engineering and Analytics</b>
+                                <p>We enable organizations to transform raw data into valuable insights through robust data engineering and advanced analytics solutions. By leveraging modern data platforms, cloud technologies, AI-driven analytics, and drive strategic actions.</p>
                                 <span>Learn More</span>
                             </div>
                         </a>

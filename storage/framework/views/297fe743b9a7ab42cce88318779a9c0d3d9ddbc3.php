@@ -24,12 +24,14 @@
                         <a href="<?php echo e(route('services')); ?>" class="nav-link dropdown-toggle dropdown-text d-md-none" data-toggle="dropdown">Services</a>
                         <a href="<?php echo e(route('services')); ?>" class="nav-link dropdown-toggle dropdown-link" >Services</a>
                         <div class="dropdown-menu">
+                            <a class="dropdown-item <?php echo e(Request::is('ai-services') ? 'active' : ''); ?>" href="<?php echo e(route('ai-services')); ?>">AI Services</a>
                             <a class="dropdown-item <?php echo e(Request::is('app-development') ? 'active' : ''); ?>" href="<?php echo e(route('app-development')); ?>">Mobile App Development</a>
                             <a class="dropdown-item <?php echo e(Request::is('web-development') ? 'active' : ''); ?>" href="<?php echo e(route('web-development')); ?>">Web Development</a>
                             <a class="dropdown-item <?php echo e(Request::is('ui-ux') ? 'active' : ''); ?>" href="<?php echo e(route('ui-ux')); ?>">UI/UX Service</a>
                             <a class="dropdown-item <?php echo e(Request::is('internet-of-things') ? 'active' : ''); ?>" href="<?php echo e(route('internet-of-things')); ?>">Internet Of Things</a>
                             <a class="dropdown-item <?php echo e(Request::is('development-operations') ? 'active' : ''); ?>" href="<?php echo e(route('development-operations')); ?>">DevOps</a>
                             <a class="dropdown-item <?php echo e(Request::is('quality-assurance') ? 'active' : ''); ?>" href="<?php echo e(route('quality-assurance')); ?>">Quality Assurance</a>
+                            <a class="dropdown-item <?php echo e(Request::is('data-engineering') ? 'active' : ''); ?>" href="<?php echo e(route('data-engineering')); ?>">Data Engineering and Analytics</a>
                         </div>
                     </li>
                     <li class="nav-item <?php echo e(Request::is('case-studies') || Request::is('case-studies/kooberi') || Request::is('case-studies/carblip') || Request::is('case-studies/quick') ? 'active' : ''); ?>">
