@@ -10,10 +10,42 @@
             </div>
         </section>
 
+        {{-- AI Service --}}
+        <section class="ui-ux" id="DevOps">
+            <div class="container ui-ux-service cross-sec">
+                <div class="row align-items-center">
+                    <div class="col col-md-6 wow fadeInUp cross-alter-content">
+                        <img src="{{ asset('images/service/ai_service/service-7.svg')}}" class="w-auto" width="100px" height="100px" alt="unikwork">
+                        <h2>AI Services</h2>
+                        <h3>Design, Deploy, and Scale Intelligent Systems That Drive Real Business Outcomes</h3>
+                        <p>We deliver end-to-end AI services that help you identify high-impact use cases, prepare your data, and build production-ready models. Our experts combine modern MLOps practices with responsible AI principles to design, implement, and operate AI solutions that are secure, explainable, and aligned with your business goals—so you can move from prototype to value quickly and confidently.</p>
+
+                        <div class="icon-points">
+                            <p>AI Strategy & Consultation</p>
+                            <p>Data Engineering & MLOps</p>
+                            <p>Custom ML Model Development</p>
+                            <p>Generative AI & LLM Integration</p>
+                            <p>Natural Language Processing & Chatbots</p>
+                            <p>Computer Vision Solutions</p>
+                            <p>Predictive Analytics & Forecasting</p>
+                            <p>Model Monitoring, Governance & Compliance</p>
+                        </div>
+                        <a href="{{ route('ai-services') }}" class="btn button-primary mt-0">Learn More</a>
+                    </div>
+                    <div class="col col-md-6 text-right icon-main-img wow fadeInUp">
+                        <img src="{{ asset('images/service/ai_service/ai_service.jpg') }}" widht="600px" height="600px" alt="AI Services">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         {{-- Mobile App Development --}}
         <section class="mobile-app-dev" id="AppDevelopment">
             <div class="container mobile-app cross-sec">
                 <div class="row align-items-center">
+                    <div class="col col-md-6 text-left icon-main-img wow fadeInUp">
+                        <img src="{{ asset('images/service/mobile-app-dev.png') }}" widht="600px" height="700px" alt="services unikwork">
+                    </div>
                     <div class="col col-md-6 wow fadeInUp cross-alter-content">
                         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100.002" viewBox="0 0 100 100.002" class="illustration-sec-icon">
                             <g id="Group_2185" data-name="Group 2185" transform="translate(-452 -232)">
@@ -103,10 +135,7 @@
                         </div>
 
                         <a href="{{ route('app-development') }}" class="btn button-primary">Learn More</a>
-                    </div>
-                    <div class="col col-md-6 text-right icon-main-img wow fadeInUp">
-                        <img src="{{ asset('images/service/mobile-app-dev.png') }}" widht="600px" height="700px" alt="services unikwork">
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </section>
@@ -115,10 +144,7 @@
         {{-- Web Development --}}
         <section class="web-app-dev" id="WebDevelopment">
             <div class="container web-dev cross-sec">
-                <div class="row align-items-center wow fadeInUp">
-                    <div class="col col-md-6 text-left icon-main-img">
-                        <img src="{{ asset('images/service/web-app-dev.png') }}" widht="600px" height="700px" alt="services unikwork">
-                    </div>
+                <div class="row align-items-center wow fadeInUp">                    
                     <div class="col col-md-6 wow fadeInUp">
                         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" class="illustration-sec-icon">
                             <g id="Group_2347" data-name="Group 2347" transform="translate(-196 -360)">
@@ -300,6 +326,9 @@
 
                         <a href="{{ route('web-development') }}" class="btn button-primary">Learn More</a>
                     </div>
+                    <div class="col col-md-6 text-right icon-main-img">
+                        <img src="{{ asset('images/service/web-app-dev.png') }}" widht="600px" height="700px" alt="services unikwork">
+                    </div>
                 </div>
             </div>
         </section>
@@ -309,6 +338,9 @@
         <section class="ui-ux" id="UI-UX">
             <div class="container ui-ux-service cross-sec">
                 <div class="row align-items-center">
+                    <div class="col col-md-6 text-left icon-main-img wow fadeInUp">
+                        <img src="{{ asset('images/service/ui-ux.png') }}" widht="600px" height="600px" alt="Mobile App Development">
+                    </div>
                     <div class="col col-md-6 wow fadeInUp cross-alter-content">
                         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" class="illustration-sec-icon">
                             <g id="Blogging" transform="translate(-324 -360)">
@@ -405,10 +437,7 @@
                         </div>
 
                         <a href="{{ route('ui-ux') }}" class="btn button-primary">Learn More</a>
-                    </div>
-                    <div class="col col-md-6 text-right icon-main-img wow fadeInUp">
-                        <img src="{{ asset('images/service/ui-ux.png') }}" widht="600px" height="600px" alt="Mobile App Development">
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </section>
@@ -417,10 +446,7 @@
         {{-- Internet of things --}}
         <section class="web-app-dev" id="IoT">
             <div class="container web-dev cross-sec">
-                <div class="row align-items-center">
-                    <div class="col col-md-6 text-left icon-main-img wow fadeInUp">
-                        <img src="{{ asset('images/service/internet-things.png') }}" widht="600px" height="600px" alt="Mobile App Development">
-                    </div>
+                <div class="row align-items-center">                    
                     <div class="col col-md-6 wow fadeInUp">
                         <svg xmlns="http://www.w3.org/2000/svg" width="118" height="104" viewBox="0 0 118 104" class="illustration-sec-icon">
                             <g id="Group_2482" data-name="Group 2482" transform="translate(-138 -198)">
@@ -478,6 +504,9 @@
 
                         <a href="{{ route('internet-of-things') }}" class="btn button-primary">Learn More</a>
                     </div>
+                    <div class="col col-md-6 text-right icon-main-img wow fadeInUp">
+                        <img src="{{ asset('images/service/internet-things.png') }}" widht="600px" height="600px" alt="Mobile App Development">
+                    </div>
                 </div>
             </div>
         </section>
@@ -487,6 +516,9 @@
         <section class="ui-ux" id="DevOps">
             <div class="container ui-ux-service cross-sec">
                 <div class="row align-items-center">
+                    <div class="col col-md-6 text-left icon-main-img wow fadeInUp">
+                        <img src="{{ asset('images/service/dev-opration.png') }}" widht="600px" height="600px" alt="Mobile App Development">
+                    </div>
                     <div class="col col-md-6 wow fadeInUp cross-alter-content">
                         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="108" viewBox="0 0 100 108" class="illustration-sec-icon">
                             <g id="digital_marketing" data-name="digital marketing" transform="translate(-69 -231)">
@@ -515,10 +547,7 @@
                         <p>At Unikwork, we provide full-service DevOps solutions that will allow you to minimize the time taken to release your products without compromising on their quality, functionality, and performance. Our experienced professionals automate your software development lifecycle, uniting the process, leading technology, and the people behind them to produce products that deliver value to your target audience. </p>
 
                         <a href="{{ route('development-operations') }}" class="btn button-primary mt-0">Learn More</a>
-                    </div>
-                    <div class="col col-md-6 text-right icon-main-img wow fadeInUp">
-                        <img src="{{ asset('images/service/dev-opration.png') }}" widht="600px" height="600px" alt="Mobile App Development">
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </section>
@@ -527,10 +556,7 @@
         {{-- Quality Assurance --}}
         <section class="web-app-dev" id="QualityAssurance">
             <div class="container web-dev cross-sec">
-                <div class="row align-items-center">
-                    <div class="col col-md-6 text-left icon-main-img wow fadeInUp">
-                        <img src="{{ asset('images/service/qa.png') }}" widht="600px" height="600px" alt="Mobile App Development">
-                    </div>
+                <div class="row align-items-center">                    
                     <div class="col col-md-6 wow fadeInUp">
                         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" class="illustration-sec-icon">
                             <g id="mobile_SEO" data-name="mobile SEO" transform="translate(-580 -232)">
@@ -575,38 +601,12 @@
 
                         <a href="{{ route('quality-assurance') }}" class="btn button-primary">Learn More</a>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        {{-- AI Service --}}
-        <section class="ui-ux" id="DevOps">
-            <div class="container ui-ux-service cross-sec">
-                <div class="row align-items-center">
-                    <div class="col col-md-6 wow fadeInUp cross-alter-content">
-                        <img src="{{ asset('images/service/ai_service/service-7.svg')}}" class="w-auto" width="100px" height="100px" alt="unikwork">
-                        <h2>AI Services</h2>
-                        <h3>Design, Deploy, and Scale Intelligent Systems That Drive Real Business Outcomes</h3>
-                        <p>We deliver end-to-end AI services that help you identify high-impact use cases, prepare your data, and build production-ready models. Our experts combine modern MLOps practices with responsible AI principles to design, implement, and operate AI solutions that are secure, explainable, and aligned with your business goals—so you can move from prototype to value quickly and confidently.</p>
-
-                        <div class="icon-points">
-                        <p>AI Strategy & Consultation</p>
-                        <p>Data Engineering & MLOps</p>
-                        <p>Custom ML Model Development</p>
-                        <p>Generative AI & LLM Integration</p>
-                        <p>Natural Language Processing & Chatbots</p>
-                        <p>Computer Vision Solutions</p>
-                        <p>Predictive Analytics & Forecasting</p>
-                        <p>Model Monitoring, Governance & Compliance</p>
-                        </div>
-                        <a href="{{ route('ai-services') }}" class="btn button-primary mt-0">Learn More</a>
-                    </div>
                     <div class="col col-md-6 text-right icon-main-img wow fadeInUp">
-                        <img src="{{ asset('images/service/ai_service/ai_service.jpg') }}" widht="600px" height="600px" alt="AI Services">
+                        <img src="{{ asset('images/service/qa.png') }}" widht="600px" height="600px" alt="Mobile App Development">
                     </div>
                 </div>
             </div>
-        </section>
+        </section>        
 
          {{-- Data Engineering and Analytics --}}
         <section class="web-app-dev" id="QualityAssurance">
