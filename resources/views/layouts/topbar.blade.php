@@ -20,7 +20,7 @@
                     <li class="nav-item {{ Request::is('about-us') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('about-us') }}">About Us</a>
                     </li>
-                    <li class="nav-item dropdown {{ Request::is('services') || Request::is('app-development') || Request::is('web-development') || Request::is('ui-ux') || Request::is('internet-of-things') || Request::is('development-operations') || Request::is('quality-assurance') ? 'active' : '' }}">
+                    <li class="nav-item dropdown {{ Request::is('services') || Request::is('ai-services') || Request::is('app-development') || Request::is('web-development') || Request::is('ui-ux') || Request::is('internet-of-things') || Request::is('development-operations') || Request::is('quality-assurance') || Request::is('data-engineering') ? 'active' : '' }}">
                         <a href="{{ route('services') }}" class="nav-link dropdown-toggle dropdown-text d-md-none" data-toggle="dropdown">Services</a>
                         <a href="{{ route('services') }}" class="nav-link dropdown-toggle dropdown-link" >Services</a>
                         <div class="dropdown-menu">
