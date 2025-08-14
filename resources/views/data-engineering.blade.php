@@ -182,23 +182,21 @@
          {{-- empower ai --}}
         <section class="our-vision section-space pb-5">
             <div class="container-fluid">
-                <div class="container">
+                <div class="container text-center">
                     <h2>Latest and modern technology stack to supercharge our Data solutions</h2>
                     <p>
                         We employ the latest and advanced technologies to develop and deploy our top-notch AI solutions
-                    </p>                    
-                    <div class="row d-block d-md-flex">
-                       <div class="icon-points">
-                            <p style="justify-self: left;" class="text-nowrap">Programming Languages - Python, Java, SQL, Scala </p>
-                            <p style="justify-self: left;" class="text-nowrap">Data Warehouse - Snowflake, Teradata, Snowflake, Amazon Redshift, Azure Synapse, Google BigQuery</p>
-                            <p style="justify-self: left;" class="text-nowrap">ETL Tools - Apache Nifi, Informatica, SSIS, AWS Glue, Apache Airflow, Google Dataflow</p> 
-                            <p style="justify-self: left;" class="text-nowrap">Data Integration - SAP Data Services,  MuleSoft, Apache Kafka, Apache Camel.</p>
-                            <p style="justify-self: left;" class="text-nowrap">Data Visualization - Power BI, Tableau, QlikView, Looker. </p>
-                            <p style="justify-self: left;" class="text-nowrap">Data Lakes - Databricks, Azure Data Lake, Aws Data Lakes, Cloudera</p>
-                            <p style="justify-self: left;" class="text-nowrap">Data Annotation - Annotation - Label Studio, LabelBox, Super Annotate</p>
-                            <p style="justify-self: left;" class="text-nowrap">Data Security - Google Cloud KMS, Azure Key vault, AWS KMS, Apache Ranger</p>                            
+                    </p>                                        
+                       <div class="icon-points-centered">
+                            <p>Programming Languages - Python, Java, SQL, Scala </p>
+                            <p>Data Warehouse - Snowflake, Teradata, Snowflake, Amazon Redshift, Azure Synapse, Google BigQuery</p>
+                            <p>ETL Tools - Apache Nifi, Informatica, SSIS, AWS Glue, Apache Airflow, Google Dataflow</p> 
+                            <p>Data Integration - SAP Data Services,  MuleSoft, Apache Kafka, Apache Camel.</p>
+                            <p>Data Visualization - Power BI, Tableau, QlikView, Looker. </p>
+                            <p>Data Lakes - Databricks, Azure Data Lake, Aws Data Lakes, Cloudera</p>
+                            <p>Data Annotation - Annotation - Label Studio, LabelBox, Super Annotate</p>
+                            <p>Data Security - Google Cloud KMS, Azure Key vault, AWS KMS, Apache Ranger</p>                            
                         </div>
-                    </div>
                     <a href="{{ route('contact-us') }}" class="btn button-primary mt-5">Modernize Your Data Infrastructure</a>
                 </div>
             </div>

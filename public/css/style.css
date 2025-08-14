@@ -4183,3 +4183,44 @@ input[type=search]::-webkit-search-cancel-button {
     background-color: #f57f50;
     color: #fff;
 }
+
+/* New centered skills layout inside .our-vision */
+.our-vision .icon-points-centered {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 60px; /* row gap / column gap */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* left-align inside each column */
+}
+
+/* Override .our-vision p padding for this block only */
+.our-vision .icon-points-centered p {
+    padding: 0 0 0 30px; /* remove 80px side padding, keep left padding for bullet */
+    margin-bottom: 10px;
+    position: relative;
+    flex: 0 0 calc(50% - 60px); /* two columns */
+    white-space: normal;
+}
+
+/* Keep the coral dash */
+.our-vision .icon-points-centered p:before {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 13px;
+    background: coral;
+    top: 11px;
+    left: 0;
+    border-radius: 2px;
+}
+
+/* Mobile: make it one column */
+@media (max-width: 768px) {
+    .our-vision .icon-points-centered p {
+        flex: 0 0 100%;
+    }
+}
