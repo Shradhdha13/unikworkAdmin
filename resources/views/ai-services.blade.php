@@ -21,7 +21,7 @@
                         <a href="{{ route('contact-us') }}" class="btn button-primary">Speak To Our AI Experts Today</a>
                     </div>
                     <div class="col col-md-6 text-right icon-main-img wow fadeInUp">
-                        <img src="{{ asset('images/service/ai_service/ai_service.jpg') }}" class="new-service" width="600px" height="600px" alt="qa unikwork">
+                        <img src="{{ asset('images/service/ai_service/ai_service.jpg') }}" class="new-service" width="600px" height="600px" alt="unikwork">
                     </div>
                 </div>
             </div>

@@ -578,6 +578,53 @@
                 </div>
             </div>
         </section>
+
+        {{-- AI Service --}}
+        <section class="ui-ux" id="DevOps">
+            <div class="container ui-ux-service cross-sec">
+                <div class="row align-items-center">
+                    <div class="col col-md-6 wow fadeInUp cross-alter-content">
+                        <img src="{{ asset('images/service/ai_service/service-7.svg')}}" class="w-auto" width="100px" height="100px" alt="unikwork">
+                        <h2>AI Services</h2>
+                        <h3>Design, Deploy, and Scale Intelligent Systems That Drive Real Business Outcomes</h3>
+                        <p>We deliver end-to-end AI services that help you identify high-impact use cases, prepare your data, and build production-ready models. Our experts combine modern MLOps practices with responsible AI principles to design, implement, and operate AI solutions that are secure, explainable, and aligned with your business goals—so you can move from prototype to value quickly and confidently.</p>
+
+                        <div class="icon-points">
+                        <p>AI Strategy & Consultation</p>
+                        <p>Data Engineering & MLOps</p>
+                        <p>Custom ML Model Development</p>
+                        <p>Generative AI & LLM Integration</p>
+                        <p>Natural Language Processing & Chatbots</p>
+                        <p>Computer Vision Solutions</p>
+                        <p>Predictive Analytics & Forecasting</p>
+                        <p>Model Monitoring, Governance & Compliance</p>
+                        </div>
+                        <a href="{{ route('ai-services') }}" class="btn button-primary mt-0">Learn More</a>
+                    </div>
+                    <div class="col col-md-6 text-right icon-main-img wow fadeInUp">
+                        <img src="{{ asset('images/service/ai_service/ai_service.jpg') }}" widht="600px" height="600px" alt="AI Services">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         {{-- Data Engineering and Analytics --}}
+        <section class="web-app-dev" id="QualityAssurance">
+            <div class="container web-dev cross-sec">
+                <div class="row align-items-center">
+                    <div class="col col-md-6 text-left icon-main-img wow fadeInUp">
+                        <img src="{{ asset('images/service/data_engineering/data-engineering.jpg') }}" widht="600px" height="600px" alt="Data Engineering and Analytics">
+                    </div>
+                    <div class="col col-md-6 wow fadeInUp">
+                        <img src="{{ asset('images/service/data_engineering/service-8.svg')}}" class="w-auto" width="100px" height="100px" alt="unikwork">
+                        <h2>Data Engineering and Analytics</h2>
+                        <h3>Build Reliable Data Foundations and Turn Information Into Actionable Insights</h3>
+                        <p>We design and operate modern data platforms that make your data trustworthy, timely, and ready for analysis. From ingestion to visualization, our teams implement scalable pipelines, resilient lakehouse/warehouse architectures, and robust governance so your analysts and leaders can make faster, smarter decisions with confidence.</p>
+                        <a href="{{ route('data-engineering') }}" class="btn button-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
         @include('whatwedo')
     </main>
 @endsection
